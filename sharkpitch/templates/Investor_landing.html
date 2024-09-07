@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>investor landing</title>
+    <link rel="stylesheet" href="../assets/styles/css/Investor_landing.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div id="domains">
+        <h1 id="dom">DOMAINS :</h1>
+        <ul id="unl">
+        <li><a href="">FOOD</a></li>
+        <li><a href="">LIFE STYLE</a></li>
+        <li><a href="">EDUCATION</a></li>
+        <li><a href="">FINANCE</a></li>
+        <li><a href="">HEALTH</a></li>
+        <li><a href="">OTHERS</a></li>
+        </ul>
+    </div>
+    <div id="h3">
+        <div id="sb">
+            <label class="input input-bordered flex items-center gap-2" id="sb">
+                <svg
+                id="sicon"  
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                class="h-4 w-4 opacity-70">
+                <path
+                    fill-rule="evenodd"
+                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                    clip-rule="evenodd" />
+                </svg>
+                <input type="text" class="" placeholder="Search" id="search-bar" />
+            </label> 
+            
+        </div>
+        <div id="dd">
+            <details class="dropdown" id="dd1">
+                <summary class="btn m-1">Filter by</summary>
+                <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow" id="dd1">
+                  <li><a href="">Lastest</a></li>
+                  <li><a href="">Oldest</a></li>
+                  <li><a href="">Service</a></li>
+                  <li><a href="">Product</a></li>
+                  <li><a href="">Growth</a></li>
+                  <li><a href="">Value</a></li>
+                </ul>
+              </details>
+        </div>
+    </div>
+    <br id="br">
+    <div>
+    <div class="video-container">
+        <video id="uploadedVideo" class="clickable-video" controls></video>
+    </div>
+    <h2 id="us">Startup_Name</h2>
+    </div>
+    {% endblock %}
+</body>
+</html>
