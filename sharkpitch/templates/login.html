@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="../assets/images/shark_pitch_logo.jpg" alt="Shark Pitch Logo" id="logo">
+            <a href="Home.html" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="Home.html" id="about">About Us</a>
+            <a href="Home.html" id="contact">Contact Us</a>
+            <a href="Home.html" id="register">Register</a>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <!-- Left Column with Form -->
+        <div class="login-form">
+            <h2>Login</h2>
+            <p>Don't have an account? <a href="sign_up.html">Sign up here</a></p>
+            <form>
+                <div class="form-group">
+                    <label for="name"><strong>Name:</strong></label>
+                    <input type="text" id="name" name="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><strong>Email ID:</strong></label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><strong>Password:</strong></label>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <!-- Login Button -->
+                <button type="button" class="role-button">Login</button>
+            </form>
+        </div>
+        
+        <!-- Right Column with Image -->
+        <div class="login-image">
+            <img src="..\assets\images\sign_up.jpg" alt="Login Illustration">
+        </div>
+    </div>
+</body>
+</html>
