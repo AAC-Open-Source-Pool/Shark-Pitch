@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financials and Business Model</title>
+    <link rel="stylesheet" href="../assets/css/startup_verification_pages/page2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="../assets/images/shark_pitch_logo.jpg" alt="Shark Pitch Logo" id="logo">
+            <a href="Home.html" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="Home.html" id="about">About Us</a>
+            <a href="Home.html" id="contact">Contact Us</a>
+            <a href="Home.html" id="logout">Logout</a>
+            <img src="../assets/images/profile.jpg" alt="Profile" id="prof">
+        </nav>
+    </header>
+
+    <!-- Financials and Business Model Section -->
+    <div class="questions-container">
+        <h2>Financials and Business Model</h2>
+
+        <!-- Questions -->
+        <form id="questionsForm">
+            <div class="questions">
+                <div class="question">
+                    <p>1. How do you make money?</p>
+                    <input type="text" id="revenueStreams" placeholder="Explain your revenue streams.">
+                </div>
+                <div class="question">
+                    <p>2. What do you need that you don't have?</p>
+                    <input type="text" id="supportNeeded" placeholder="List areas of support needed.">
+                </div>
+                <div class="question">
+                    <p>3. How much are you raising and what would you like to do with it?</p>
+                    <input type="text" id="fundingRequirements" placeholder="Investors want to know the funding requirements and how the money will be utilized.">
+                </div>
+                <div class="question">
+                    <p>4. What are your profit margins?</p>
+                    <input type="text" id="profitMargins" placeholder="Investors want to know the profit margins of the business and how they compare to the industry average.">
+                </div>
+                <div class="question">
+                    <p>5. How do you calculate your unit economics?</p>
+                    <input type="text" id="unitEconomics" placeholder="Investors want to know the unit economics of the product, including the cost of acquisition, retention, and revenue per user.">
+                </div>
+                <div class="question">
+                    <p>6. What are your yearly sales?</p>
+                    <input type="text" id="yearlySales" placeholder="Investors want to know the yearly sales of the company and how they have been growing over time.">
+                </div>
+                <div class="question">
+                    <p>7. What is your year-over-year growth rate?</p>
+                    <input type="text" id="growthRate" placeholder="Investors want to know the year-over-year growth rate of the company and how it compares to the industry average.">
+                </div>
+                <div class="question">
+                    <p>8. How do you manage your cash flow?</p>
+                    <input type="text" id="cashFlowManagement" placeholder="Investors want to know how the company manages its cash flow and how it plans to maintain a healthy cash position.">
+                </div>
+
+                <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input values
+            const revenueStreams = document.getElementById('revenueStreams').value;
+            const supportNeeded = document.getElementById('supportNeeded').value;
+            const fundingRequirements = document.getElementById('fundingRequirements').value;
+            const profitMargins = document.getElementById('profitMargins').value;
+            const unitEconomics = document.getElementById('unitEconomics').value;
+            const yearlySales = document.getElementById('yearlySales').value;
+            const growthRate = document.getElementById('growthRate').value;
+            const cashFlowManagement = document.getElementById('cashFlowManagement').value;
+
+            // Store the values in local storage
+            localStorage.setItem('revenueStreams', revenueStreams);
+            localStorage.setItem('supportNeeded', supportNeeded);
+            localStorage.setItem('fundingRequirements', fundingRequirements);
+            localStorage.setItem('profitMargins', profitMargins);
+            localStorage.setItem('unitEconomics', unitEconomics);
+            localStorage.setItem('yearlySales', yearlySales);
+            localStorage.setItem('growthRate', growthRate);
+            localStorage.setItem('cashFlowManagement', cashFlowManagement);
+
+            // Redirect to the next page (page3.html)
+            window.location.href = 'page3.html';
+        });
+    </script>
+</body>
+</html>
