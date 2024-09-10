@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous</title>
+    <link rel="stylesheet" href="../assets/css/startup_verification_pages/page2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="../assets/images/shark_pitch_logo.jpg" alt="Shark Pitch Logo" id="logo">
+            <a href="Home.html" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="Home.html" id="about">About Us</a>
+            <a href="Home.html" id="contact">Contact Us</a>
+            <a href="Home.html" id="logout">Logout</a>
+            <img src="../assets/images/profile.jpg" alt="Profile" id="prof">
+        </nav>
+    </header>
+
+    <!-- Financials and Business Model Section -->
+    <div class="questions-container">
+        <h2>Miscellaneous</h2>
+
+        <!-- Questions -->
+        <form id="questionsForm">
+            <div class="questions">
+                <div class="question">
+                    <p>1. How did you come up with this idea?</p>
+                    <input type="text" id="problemSolved" placeholder="Investors want to know about the startup's origin and the founders' vision.">
+                </div>
+                <div class="question">
+                    <p>2. What are your plans for scaling the business?</p>
+                    <input type="text" id="pointOfDifference" placeholder="Investors want to know about the startup's growth strategy and how it will achieve scalability.">
+                </div>
+                <div class="question">
+                    <p>3. What are your key competitors and how do you differentiate yourself?</p>
+                    <input type="text" id="totalAddressableMarket" placeholder="Investors want to know about the competitive landscape and how the startup stands out.">
+                </div>
+                
+                <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input values
+            const problemSolved = document.getElementById('problemSolved').value;
+            const pointOfDifference = document.getElementById('pointOfDifference').value;
+            const totalAddressableMarket = document.getElementById('totalAddressableMarket').value;
+
+            // Store the values in local storage
+            localStorage.setItem('problemSolved', problemSolved);
+            localStorage.setItem('pointOfDifference', pointOfDifference);
+            localStorage.setItem('totalAddressableMarket', totalAddressableMarket);
+
+            // Redirect to the next page (page4.html)
+            window.location.href = 'startup_verification_page9.html';
+        });
+    </script>
+</body>
+</html>
