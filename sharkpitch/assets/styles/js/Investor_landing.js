@@ -9,32 +9,41 @@ Videos.forEach(video => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBar = document.getElementById('search-bar');
 
-document.getElementById('search-bar').addEventListener('input', function() {
-    const searchQuery = this.value.toLowerCase();
-    const videoItems = document.querySelectorAll('.clickable-video');
-    videoItems.forEach(item => {
-        const startup = item.getAttribute('data-startup').toLowerCase();
-        if (startup.includes(searchQuery)) {
-            item.style.display = ''; 
-        } 
-        else {
-            item.style.display = 'none';
-        }
-    });
+    if (searchBar) {
+        searchBar.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const videos = document.querySelectorAll('.video-item');
+
+            videos.forEach(function(video) {
+                const videoName = video.querySelector('.video-name').textContent.toLowerCase();
+
+                if (videoName.includes(searchTerm)) {
+                    video.style.display = '';
+                } else {
+                    video.style.display = 'none';
+                }
+            });
+        });
+    } else {
+        console.error('Search bar element not found.');
+    }
 });
 
 
-const categoryButtons = document.querySelectorAll('.category');
-const videos = document.querySelectorAll('.clickable-video');
+const categoryButtons = document.querySelectorAll('li.category');
+const videos = document.querySelectorAll('#clickable-video');
 
-categoryButtons.forEach(button => {
+categoryButtons.forEach(button => { 
     button.addEventListener('click', function() {
         const selectedCategory = this.getAttribute('data-category');
+        console.log('Selected category:', selectedCategory);
 
         videos.forEach(video => {
             const videoCategory = video.getAttribute('data-tag').toLowerCase();
-            if (videoCategory === selectedCategory) {
+            if (videoCategory === selectedCategory || selectedCategory === 'all') {
                 video.style.display = ''; 
             } else {
                 video.style.display = 'none';

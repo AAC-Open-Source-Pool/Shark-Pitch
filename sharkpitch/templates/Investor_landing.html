@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+    {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +9,21 @@
     <link rel="stylesheet" href="../assets/styles/css/Investor_landing.css">
 </head>
 <body>
-    {% extends 'base.html' %}
-    {% block content %}
     <div id="domains">
-        <h1 id="dom">DOMAINS :</h1>
+        <h2 id="dom">DOMAINS :</h2>
         <ul id="unl">
-        <li><a href="">FOOD</a></li>
-        <li><a href="">LIFE STYLE</a></li>
-        <li><a href="">EDUCATION</a></li>
-        <li><a href="">FINANCE</a></li>
-        <li><a href="">HEALTH</a></li>
-        <li><a href="">OTHERS</a></li>
+        <li class="category" data-category="food">FOOD</li>
+        <li class="category" data-category="life style">LIFE STYLE</li>
+        <li class="category" data-category="education">EDUCATION</li>
+        <li class="category" data-category="finance">FINANCE</li>
+        <li class="category" data-category="health">HEALTH</li>
+        <li class="category" data-category="others">OTHERS</li>
+        <li class="category" data-category="all">SHOW ALL</li>
         </ul>
     </div>
     <div id="h3">
         <div id="sb">
-            <label class="input input-bordered flex items-center gap-2" id="sb">
+            <label class="input input-bordered flex items-center gap-2" id="sb" >
                 <svg
                 id="sicon"  
                 viewBox="0 0 16 16"
@@ -33,7 +34,7 @@
                     d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                     clip-rule="evenodd" />
                 </svg>
-                <input type="text" class="" placeholder="Search" id="search-bar" />
+                <input type="text" placeholder="Search" id="search-bar"/>
             </label> 
             
         </div>
@@ -41,39 +42,52 @@
             <details class="dropdown" id="dd1">
                 <summary class="btn m-1">Filter by</summary>
                 <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow" id="dd1">
-                  <li><a href="">Lastest</a></li>
-                  <li><a href="">Oldest</a></li>
-                  <li><a href="">Service</a></li>
-                  <li><a href="">Product</a></li>
-                  <li><a href="">Growth</a></li>
+                  <li>Lastest</li>
+                  <li>Oldest</li>
+                  <li>Service</li>
+                  <li>Product</li>
+                  <li>Growth</li>
                   <li><a href="">Value</a></li>
                 </ul>
               </details>
         </div>
     </div>
+    
     <br id="br">
     <div>
     <div class="video-container">
-        <div>
-        <video id="uploadedVideo" src="../assets/styles/videos/pitch1.mp4" class="clickable-video" controls></video>
-        <h2 id="us">Startup_Name</h2>
+        <div class="video-item" id="clickable-video" data-tag="food">
+            <video id="uploadedVideo"  src="../assets/styles/videos/pitch1.mp4" controls></video>
+            <h2 id="us" class="video-name">XL8's pitch</h2>
+            <p id="us">by Tim  , a founder and Ceo at XL8</p>
         </div>
-        <div>
-        <video id="uploadedVideo" src="../assets/styles/videos/pitch2.mp4" class="clickable-video" controls></video>
-        <h2 id="us">Startup_Name</h2>
+        <div class="video-item" id="clickable-video" data-tag="others">
+            <video id="uploadedVideo" src="../assets/styles/videos/pitch2.mp4"  controls></video>
+            <h2 id="us" class="video-name">TedXSouthbank</h2>
+            <p id="us">by Joseph Knox Wheeler</p>
         </div>
-        <div>
-        <video id="uploadedVideo" src="../assets/styles/videos/pitch3.mp4" class="clickable-video" controls></video>
-        <h2 id="us">Startup_Name</h2>
+        <div  class="video-item" id="clickable-video" data-tag="life style">
+            <video id="uploadedVideo" src="../assets/styles/videos/pitch5.mp4"  controls></video>
+            <h2 id="us" class="video-name">Jack stands</h2>
+            <p id="us">by Jackie and Stephen</p>
+            </div>
+        <div  class="video-item" id="clickable-video" data-tag="education">
+            <video id="uploadedVideo" src="../assets/styles/videos/pitch3.mp4"  controls></video>
+            <h2 id="us" class="video-name">Goodybag</h2>
+            <p id="us">by Jay Panchal</p>
         </div>
-        <div>
-        <video id="uploadedVideo" src="../assets/styles/videos/pitch4.mp4" class="clickable-video" controls></video>
-        <h2 id="us">Startup_Name</h2>
+        <div  class="video-item" id="clickable-video" data-tag="finance">
+            <video id="uploadedVideo" src="../assets/styles/videos/pitch4.mp4"  controls></video>
+            <h2 id="us" class="video-name">Doordash</h2>
+            <p id="us">by Tony Xu , CEO and co-founder</p>
         </div>
-        <div>
-        <video id="uploadedVideo" src="../assets/styles/videos/pitch4.mp4" class="clickable-video" controls></video>
-        <h2 id="us">Startup_Name</h2>
+        <div  class="video-item" id="clickable-video" data-tag="health">
+            <video id="uploadedVideo" src="../assets/styles/videos/pitch5.mp4"  controls></video>
+            <h2 id="us" class="video-name">Jack stands</h2>
+            <p id="us">by Jackie and Stephen</p>
         </div>
+       
     {% endblock %}
+    <script src="../assets/styles/js/Investor_landing.js"></script>
 </body>
 </html>

@@ -9,44 +9,43 @@
 <body>
     {% extends 'base.html' %}
     {% block content %}
-    <h1 id="h2p">My Profile</h1>
-    <div id="area1">
-        <div id="area11">
-            <img src="../assets/styles/images/prof.png" alt="profile photo" id="prof1">
-            <h2 id="name1">Srinivas</h2>
+    <h1 id="myprofile">My Profile</h1>
+    <div id="Main-profile-container">
+        <div id="avatar-card">
+            <img src="../assets/styles/images/profile.jpg" alt="profile photo" id="avatar">
+            <h2 id="name1">Sravan Reddy</h2>
             <h3 id="loc">Hyd,India</h3>
         </div>
-        <div id="area12">
+        <div id="details-card">
             <div id="a">
-                <h1 id="name">Name :</h1>
-                <p id="pname">Srinivas</p>
+                <table>
+                <tr>
+                    <td><strong>Name :</strong></td>
+                    <td>Srinivas Reddy</td>
+                </tr>
+                <tr>
+                    <td><strong>Mail ID : </strong></td>
+                    <td>srinivas@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><strong>Profession :</strong></td>
+                    <td>Employee at Shark Industries</td>
+                </tr>
+                <tr>
+                    <td><strong>Contact :</strong></td>
+                    <td>7036469121</td>
+                </tr>
+                <tr>
+                    <td><strong>Location :</strong></td>
+                    <td>Hyd,India</td>
+                </tr>
+                </table>
             </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="mail">Mail ID :</h1>
-            <p id="mail1">srinivas@gmail.com</p>
-            </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="Cname">Profession :</h1>
-            <p id="cname">software employee</p>
-            <p></p>
-            </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="contact">Contact No :</h1>
-            <p id="num">981234567</p>
-            </div>
-            <hr id="hr" class="b">
         </div>
     </div>
-    <div id="but">
-    <div id="but1">
-        <h1><a href="sign_up.html" class="buts">Become an Investor</a></h1>
-    </div>
-    <div id="but2">
-        <h1><a href="sign_up.html" class="buts">Register as a Startup</a></h1>
-    </div>
+    <div id="button-container">
+        <button><a href="sign_up.html" class="buttons">Become an Investor</a></button>
+        <button><a href="sign_up.html" class="buttons">Register as a Startup</a></button>
    </div>
    {% endblock content %}
 </body>
