@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor_profile</title>
+    <link rel="stylesheet" href="../assets/styles/css/Investor_profile.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1 id="h2p">My Profile</h1>
+    <div id="area1">
+        <div id="area11">
+            <img src="../assets/styles/images/prof.png" alt="profile_photo" id="prof1">
+            <h2 id="name1">Name</h2>
+            <h3 id="loc">Hyd,India</h3>
+        </div>
+        <div id="area12">
+            <div id="a">
+                <h1 id="name">Name :</h1>
+                <p id="pname">XXXXX XXXX</p>
+            </div>
+            <hr id="hr" class="b">
+            <div id="a">
+            <h1 id="mail">Mail ID :</h1>
+            <p id="mail1">xxxxxx@gmail.com</p>
+            </div>
+            <hr id="hr" class="b">
+            <div id="a">
+            <h1 id="Cname">Company Name :</h1>
+            <p id="cname">XXXXXXX XXXXX</p>
+            <p></p>
+            </div>
+            <hr id="hr" class="b">
+            <div id="a">
+            <h1 id="contact">Contact No :</h1>
+            <p id="num">981234567</p>
+            </div>
+            <hr id="hr" class="b">
+        </div>
+    </div>
+    <div id="area2">
+        <h1 id="exp">Experience:</h1>
+        <p id="exp1">My past investing experience includes navigating market fluctuations and
+            identifying lucrative opportunities. One notable investment was in a promising 
+           tech startup, which yielded significant returns. I've balanced my portfolio with
+            stocks, bonds, andreal estate, learning from both gains and losses.</p>
+    </div>
+    {% endblock%}
+</body>
+</html>
