@@ -198,7 +198,7 @@ header{
     }
     #unl{
         flex-direction: column;
-        gap: 20px;
+        gap: 18px;
         margin-right: 50%;
         margin-left: -160px;
         margin-top: 10%;
@@ -215,5 +215,42 @@ header{
     }
     #sb{
         margin-left: -20px;
+    }
+    #filter{
+        margin-left: -70px;
+        margin-top: 15px;
+    }
+    header{
+        flex-direction: column;
+        height: 200px;
+    }
+    #shark{
+        margin-left: 120px;
+        margin-top:-40px ;
+    }
+    #about{
+        margin-left: 10px;
+        font-size: 22px;
+    }
+    #contact{
+        margin-left: 115px;
+        font-size: 22px;
+        margin-top: -25px;
+    }
+    #logout{
+        margin-left: 240px;
+        font-size: 22px;
+        margin-top: -25px;
+    }
+    #prof{
+        margin-left: 325px;
+        font-size: 22px;
+        height: 35px;
+        width: 35px;
+        margin-top: -30px;
+    }
+    #sicon{
+        padding-top: 25px;
+        padding-left: 05px;
     }
 } 
