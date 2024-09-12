@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-    } else {
-        console.error('Search bar element not found.');
-    }
+    } 
 });
 
 
