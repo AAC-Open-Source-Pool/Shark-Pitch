@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup info</title>
+    <link rel="stylesheet" href="../assets/styles/css/Startup_info.css">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile-info h1 {
+            margin-bottom: 20px;
+        }
+.edit-profile {
+            margin-right: 40px;
+            color: rgba(0,0,0);
+            text-decoration: none;
+            font-size: 14px;
+            position: relative;
+            left:495px;
+            top:290px;
+    }
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(17, 78, 113, 0.7);
+    padding: 10px 20px;
+    max-width: 100vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#shark {
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#prof {
+    width: 50px;
+    height: 50px;
+    border-radius: 30pxs;
+}
+.header_profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 18pxs;
+}
+    
+
+.profile-container {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile-info-box {
+    background-color: #eef6ff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #cfe2ff;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 10px 0 5px;
+}
+
+.title {
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+
+.profile-details-box {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #dcdcdc;
+    width: 60%;
+}
+
+.profile-details {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+button {
+    background-color: #114E71;
+    color: white;
+    border: none;
+    padding: 10px 5vw;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d3b54;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-details-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+    }
+    
+}
+</style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="../assets/styles/images/shark_pitch_logo.jpg" alt="" id="logo">
+            <a href="Home.html" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="Home.html" id="about">About Us</a>
+            <a href="Home.html" id="contact">Contact Us</a>
+            <a href="Home.html" id="logout">Logout</a>
+            <img src="../assets/styles/images/prof.png" alt=" " class="header_profile">
+        </nav>
+    </header>
+
+    <!-- Investor Profile Section -->
+    <div class="profile-container">
+        <h1>MY PROFILE</h1>
+        <div class="profile-card">
+            <!-- Left Box with Profile Info -->
+            <div class="profile-info-box">
+                <div class="profile-info">
+                    <img src="../assets/styles/images/prof.png" alt=" " class="prof">
+                    <h2>ch.vaishnavy</h2>
+                    <p class="title">Full-Time Investor</p>
+                    <p>Hyd, India</p>
+                </div>
+            </div>
+
+            <!-- Right Box with Profile Details -->
+            
+            <div class="profile-details-box">
+                <div class="profile-details">
+                    <table>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>ch.vaishnavy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Founders Name</strong></td>
+                            <td>Chairman of Stark Industries, Investor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E-mail</strong></td>
+                            <td>vyshuchepuri@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact no.</strong></td>
+                            <td>7337533325</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>Hyd, India</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SRN or CIN or GST Number</strong></td>
+                            <td>236484864747</td>
+                        </tr>
+                        <a href="#" class="edit-profile">+Edit Profile</a>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button>Colloborate with Others</button>
+        </div>
+    </div>
+</body>
+</html>
