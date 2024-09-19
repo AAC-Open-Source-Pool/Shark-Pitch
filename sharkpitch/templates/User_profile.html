@@ -1,18 +1,19 @@
+{% load static %}
+{% include 'header.html' %}
+    {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User_profile</title>
-    <link rel="stylesheet" href="../assets/styles/css/User_profile.css">
+    <link rel="stylesheet" href="{% static 'styles/css/User_profile.css' %}">
 </head>
 <body>
-    {% extends 'base.html' %}
-    {% block content %}
     <h1 id="myprofile">My Profile</h1>
     <div id="Main-profile-container">
         <div id="avatar-card">
-            <img src="../assets/styles/images/profile.jpg" alt="profile photo" id="avatar">
+            <img src="{% static 'styles/images/profile.jpg' %}" alt="profile photo" id="avatar">
             <h2 id="name1">Sravan Reddy</h2>
             <h3 id="loc">Hyd,India</h3>
         </div>
@@ -47,6 +48,6 @@
         <button><a href="sign_up.html" class="buttons">Become an Investor</a></button>
         <button><a href="sign_up.html" class="buttons">Register as a Startup</a></button>
    </div>
-   {% endblock content %}
 </body>
 </html>
+{% endblock content %}

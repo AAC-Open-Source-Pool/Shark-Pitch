@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>investor landing</title>
-    <link rel="stylesheet" href="../assets/styles/css/Investor_landing.css">
+    <link rel="stylesheet" href="{% static 'styles/css/Investor_landing.css' %}">
 </head>
 <body>  
     <header>
-        <img src="../assets/styles/images/shark_pitch_logo.jpg" alt="" id="logo">
+        <img src="{% static 'styles/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
        <a href="Home.html" id="shark">SHARK PITCH</a>
        <div id="sb">
         <label class="input input-bordered flex items-center gap-2" id="sb" >
@@ -30,7 +30,7 @@
         <a href="Home.html" id="about">About Us</a>
         <a href="Home.html" id="contact">Contact Us</a>
         <a href="Home.html" id="logout">Logout</a>
-        <img src="../assets/styles/images/profile.jpg" alt="" id="prof">
+        <img src="{% static 'styles/images/profile.jpg' %}" alt="" id="prof">
     </header>
     <div id="domains">
         <h2 id="dom">DOMAINS :</h2>
@@ -67,36 +67,36 @@
     <div>
     <div class="video-container">
         <div class="video-item" id="clickable-video" data-tag="food">
-            <video id="uploadedVideo"  src="../assets/styles/videos/pitch1.mp4" controls></video>
+            <video id="uploadedVideo"  src="{% static 'styles/videos/pitch1.mp4' %}" controls></video>
             <h2 id="us" class="video-name">XL8's pitch</h2>
             <p id="us">by Tim  , a founder and Ceo at XL8</p>
         </div>
         <div class="video-item" id="clickable-video" data-tag="others">
-            <video id="uploadedVideo" src="../assets/styles/videos/pitch2.mp4"  controls></video>
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch2.mp4' %}"  controls></video>
             <h2 id="us" class="video-name">TedXSouthbank</h2>
             <p id="us">by Joseph Knox Wheeler</p>
         </div>
         <div  class="video-item" id="clickable-video" data-tag="life style">
-            <video id="uploadedVideo" src="../assets/styles/videos/pitch5.mp4"  controls></video>
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch5.mp4' %}"  controls></video>
             <h2 id="us" class="video-name">Jack stands</h2>
             <p id="us">by Jackie and Stephen</p>
             </div>
         <div  class="video-item" id="clickable-video" data-tag="education">
-            <video id="uploadedVideo" src="../assets/styles/videos/pitch3.mp4"  controls></video>
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch3.mp4' %}"  controls></video>
             <h2 id="us" class="video-name">Goodybag</h2>
             <p id="us">by Jay Panchal</p>
         </div>
         <div  class="video-item" id="clickable-video" data-tag="finance">
-            <video id="uploadedVideo" src="../assets/styles/videos/pitch4.mp4"  controls></video>
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch4.mp4' %}"  controls></video>
             <h2 id="us" class="video-name">Doordash</h2>
             <p id="us">by Tony Xu , CEO and co-founder</p>
         </div>
         <div  class="video-item" id="clickable-video" data-tag="health">
-            <video id="uploadedVideo" src="../assets/styles/videos/pitch5.mp4"  controls></video>
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch5.mp4' %}"  controls></video>
             <h2 id="us" class="video-name">Jack stands</h2>
             <p id="us">by Jackie and Stephen</p>
         </div>
 
-    <script src="../assets/styles/js/Investor_landing.js"></script>
+    <script src="{% static 'styles/js/Investor_landing.js' %}"></script>
 </body>
 </html>

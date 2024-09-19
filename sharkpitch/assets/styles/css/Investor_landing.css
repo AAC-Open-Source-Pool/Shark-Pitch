@@ -83,13 +83,14 @@ header{
     padding-left: 50px;
     flex-grow: 1;
     align-items: center;
+    background-color: rgba(197,217,229,1);
    }
    input::placeholder {
     font-size: 18px;
     padding-left: 90px;
    }
    #search-bar:hover {
-    background-color:rgba(197,217,229,1);
+    background-color:rgb(257,257,257);
 }
    #sicon{
     height: 20px;
