@@ -1,52 +1,57 @@
+{% load static %}
+{% include 'header.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investor_profile</title>
-    <link rel="stylesheet" href="../assets/styles/css/Investor_profile.css">
+    <link rel="stylesheet" href="{% static 'styles/css/Investor_profile.css' %}">
 </head>
 <body>
-    {% extends 'base.html' %}
-    {% block content %}
-    <h1 id="h2p">My Profile</h1>
-    <div id="area1">
-        <div id="area11">
-            <img src="../assets/styles/images/prof.png" alt="profile_photo" id="prof1">
-            <h2 id="name1">Name</h2>
-            <h3 id="loc">Hyd,India</h3>
+    <h1 id="myprofile">My Profile</h1>
+    <div id="Main-profile-Container">
+        <div id="avatar-card">
+            <img src="{% static 'styles/images/profile.jpg' %}" alt="profile_photo" id="avatar">
+            <h2 id="name1">Srinivas Reddy</h2>
+            <p id="title">Full-Time Investor</p>
+            <p id="loc">Hyd,India</p>
         </div>
-        <div id="area12">
+        <div id="details-card">
             <div id="a">
-                <h1 id="name">Name :</h1>
-                <p id="pname">XXXXX XXXX</p>
+                <table>
+                <tr>
+                    <td><strong>Name :</strong></td>
+                    <td>Srinivas Reddy</td>
+                </tr>
+                <tr>
+                    <td><strong>Mail ID : </strong></td>
+                    <td>srinivas@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><strong>Company Name :</strong></td>
+                    <td>Shark Industries</td>
+                </tr>
+                <tr>
+                    <td><strong>Contact :</strong></td>
+                    <td>7036469121</td>
+                </tr>
+                <tr>
+                    <td><strong>Location :</strong></td>
+                    <td>Hyd,India</td>
+                </tr>
+                </table>
             </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="mail">Mail ID :</h1>
-            <p id="mail1">xxxxxx@gmail.com</p>
-            </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="Cname">Company Name :</h1>
-            <p id="cname">XXXXXXX XXXXX</p>
-            <p></p>
-            </div>
-            <hr id="hr" class="b">
-            <div id="a">
-            <h1 id="contact">Contact No :</h1>
-            <p id="num">981234567</p>
-            </div>
-            <hr id="hr" class="b">
         </div>
     </div>
-    <div id="area2">
-        <h1 id="exp">Experience:</h1>
-        <p id="exp1">My past investing experience includes navigating market fluctuations and
+    <div id="experience-container">
+        <h2 id="exp">Experience:</h2>
+        <p id="exp-content">My past investing experience includes navigating market fluctuations and
             identifying lucrative opportunities. One notable investment was in a promising 
            tech startup, which yielded significant returns. I've balanced my portfolio with
             stocks, bonds, andreal estate, learning from both gains and losses.</p>
     </div>
-    {% endblock%}
 </body>
 </html>
+{% endblock%}
