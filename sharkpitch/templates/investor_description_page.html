@@ -1,23 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investor Description</title>
-    <link rel="stylesheet" href="../assets/css/investor_description_page.css">
+    <link rel="stylesheet" href="{% static 'css/investor_description_page.css' %}">
 </head>
 
   <!-- Header Section -->
 <header>
     <div class="logo-container">
-        <img src="../assets/images/shark_pitch_logo.jpg" alt="" id="logo">
+        <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
         <a href="Home.html" id="shark">SHARK PITCH</a>
     </div>
     <nav>
         <a href="Home.html" id="about">About Us</a>
         <a href="Home.html" id="contact">Contact Us</a>
         <a href="Home.html" id="logout">Logout</a>
-        <img src="../assets/images/profile.jpg" alt="" id="prof">
+        <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
     </nav>
 </header>
 <body>
@@ -28,7 +29,7 @@
             <!-- Left Box with Profile Info -->
             <div class="profile-info-box">
                 <div class="profile-info">
-                    <img src="../assets/images/profile.jpg" alt="Profile Avatar" class="avatar">
+                    <img src="{% static 'images/profile.jpg' %}" alt="Profile Avatar" class="avatar">
                     <h2>R. Raghuram</h2>
                     <p class="title">Full-Time Investor</p>
                     <p>Hyd, India</p>
