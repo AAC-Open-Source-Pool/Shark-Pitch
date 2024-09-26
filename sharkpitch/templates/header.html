@@ -10,10 +10,10 @@
 <body>
     <header>
         <img src="{% static 'styles/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
-       <a href="Home.html" id="shark">SHARK PITCH</a>
-        <a href="Home.html" id="about">About Us</a>
-        <a href="Home.html" id="contact">Contact Us</a>
-        <a href="Home.html" id="logout">Logout</a>
+       <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        <a href="{% url 'home' %}" id="about">About Us</a>
+        <a href="{% url 'home' %}" id="contact">Contact Us</a>
+        <a href="{% url 'home' %}" id="logout">Logout</a>
         <img src="{% static 'styles/images/profile.jpg' %}" alt="" id="prof">
     </header>
     
