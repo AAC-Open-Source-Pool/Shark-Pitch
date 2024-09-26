@@ -1,23 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify Company/Profile</title>
-    <link rel="stylesheet" href="../assets/css/startup_verification_pages/page1.css">
+    <link rel="stylesheet" href="{% static 'css/startup_verification_pages/page1.css' %}">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <img src="../assets/images/shark_pitch_logo.jpg" alt="" id="logo">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
             <a href="Home.html" id="shark">SHARK PITCH</a>
         </div>
         <nav>
             <a href="Home.html" id="about">About Us</a>
             <a href="Home.html" id="contact">Contact Us</a>
             <a href="Home.html" id="logout">Logout</a>
-            <img src="../assets/images/profile.jpg" alt="" id="prof">
+            <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
         </nav>
     </header>
 
@@ -49,7 +50,7 @@
             localStorage.setItem('srnNumber', srnNumber);
 
             // Redirect to the next page
-            window.location.href = 'startup_verification_page2.html';
+            window.location.href = 'startup_verification_page2';
         });
     </script>
 </body>
