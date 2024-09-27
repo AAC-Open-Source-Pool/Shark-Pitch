@@ -2,11 +2,11 @@ from django.contrib import admin
 from django.urls import path,include
 from . import views 
 urlpatterns = [
-    path('',views.home,name='home'),
+    path('home',views.home,name='home'),
     path('investor_landing',views.Investor_landing,name='Investor_landing'),
     path('Investor_profile',views.Investor_profile,name='Investor_profile'),
     path('User_profile',views.User_profile,name='User_profile'),
-    path('login',views.login,name='login'),
+    path('',views.login,name='login'),
     path('signup',views.signup,name='signup'),
     path('verification1',views.verification1,name='verification1'),
     path('verification2',views.verification2,name='verification2'),

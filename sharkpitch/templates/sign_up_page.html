@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../assets/css/sign_up.css">
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <img src="../assets/images/shark_pitch_logo.jpg" alt="Shark Pitch Logo" id="logo">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
             <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
@@ -43,15 +44,15 @@
                 </div>
                 
                 <p><strong>Sign up as:</strong></p>
-                <button type="button" class="role-button">Investor</button>
+                <button type="button" class="role-button" >Investor</button>
                 <button type="button" class="role-button" onclick="window.location.href='{% url 'verification1' %}'">Entrepreneur</button>
-                <button type="button" class="role-button">User</button>
+                <button type="button" class="role-button"onclick="window.location.href='{% url 'Investor_landing' %}'">User</button>
             </form>
         </div>
         
         <!-- Right Column with Image -->
         <div class="signup-image">
-            <img src="..\assets\images\sign_up.jpg" alt="Signup Illustration">
+            <img src="{% static 'images\sign_up.jpg' %}" alt="Signup Illustration">
         </div>
     </div>
 </body>

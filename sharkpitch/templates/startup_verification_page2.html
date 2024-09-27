@@ -12,12 +12,12 @@
     <header>
         <div class="logo-container">
             <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
-            <a href="Home.html" id="shark">SHARK PITCH</a>
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
-            <a href="Home.html" id="about">About Us</a>
-            <a href="Home.html" id="contact">Contact Us</a>
-            <a href="Home.html" id="logout">Logout</a>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'home' %}" id="logout">Logout</a>
             <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
         </nav>
     </header>
@@ -61,8 +61,7 @@
                     <p>8. How do you manage your cash flow?</p>
                     <input type="text" id="cashFlowManagement" placeholder="Investors want to know how the company manages its cash flow and how it plans to maintain a healthy cash position.">
                 </div>
-
-                <button type="submit" onclick="window.location.href='{% url 'verification3' %}'">Next</button>
+                <button type="button" onclick="window.location.href='{% url 'verification3' %}'">Next</button>
             </div>
         </form>
     </div>
