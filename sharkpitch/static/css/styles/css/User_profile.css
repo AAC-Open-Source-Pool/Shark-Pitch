@@ -1,0 +1,124 @@
+#h2p{
+    position: relative;
+    margin-left: 700px;
+    margin-top: 20px;
+    display: inline-block;
+    white-space: nowrap;
+}
+#area1{
+    height: 408px;
+    width: 1252px;
+    background-color: rgba(217,217,217,0.46);
+    position: relative;
+    margin-left: 150px;
+    border-radius: 50px;
+    overflow: hidden;
+    display: flex;
+}
+#area11{
+    width: 295px;
+    height: 350px;
+    background-color: rgba(217,217,217);
+    margin-left: 80px;
+    border-radius: 20px;
+    margin-top: 23px;
+}
+#prof1{
+    height: 267.72px;
+    width: 250px;
+    margin-top: 23px;
+    margin-left: 23.5px;
+}
+#name1{
+    margin-bottom: 20px;
+    margin-left: 105px;
+}
+#loc{
+    margin-bottom: 20px;
+    margin-left: 105px;
+}
+#area12{
+    width: 700px;
+    height: 362px;
+    background-color: rgb(217,217,217);
+    margin-left: 100px;
+    border-radius: 20px;
+    margin-top: 23px;
+}
+#hr{
+    border: 2px dashed;
+    width: 650px;
+    margin-bottom:-10px;
+}
+#name{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#mail,#Cname{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+#contact{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+#a{
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#pname{
+    font-size: 32px;
+    font-weight: lighter;
+    font-family:serif;
+    margin-left: 150px;
+}
+#mail1{
+    font-size: 32px;
+    margin-left: 130px;
+    margin-top: 18px;
+}
+#cname{
+    font-size: 32px;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+#num{
+    font-size: 32px;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+.b{
+    margin-top: 0px;
+}
+#but{
+    display: flex;
+}
+#but1{
+    height: 95px;
+    width: 385px;
+    background-color: rgb(17,78,113);
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 100px;
+    display: inline-block;
+    white-space: nowrap;
+}
+.buts{
+    color: white;
+    text-decoration: none;
+   font-weight: lighter;
+}
+#but2
+{
+    height: 95px;
+    width: 385px;
+    background-color: rgb(17,78,113);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 350px;
+    white-space: nowrap;
+}
