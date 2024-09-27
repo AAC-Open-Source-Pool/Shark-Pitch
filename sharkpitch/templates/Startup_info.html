@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup info</title>
-    <link rel="stylesheet" href="../assets/styles/css/Startup_info.css">
+    <link rel="stylesheet" href="{% static 'css/Startup_info.css' %}">
     <style>
 body {
     font-family: Arial, sans-serif;
@@ -216,14 +217,14 @@ button:hover {
     <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <img src="(% static '../assets/styles/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
+            <img src="{% static '../static/css/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
             <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
             <a href="{% url 'home' %}" id="about">About Us</a>
             <a href="{% url 'home' %}" id="contact">Contact Us</a>
             <a href="{% url 'home' %}" id="logout">Logout</a>
-            <img src="(% static '../assets/styles/images/prof.png' %}" alt=" " class="header_profile">
+            <img src="{% static '../static/css/images/prof.png' %}" alt=" " class="header_profile">
         </nav>
     </header>
 
@@ -234,7 +235,7 @@ button:hover {
             <!-- Left Box with Profile Info -->
             <div class="profile-info-box">
                 <div class="profile-info">
-                    <img src="(% static '../assets/styles/images/prof.png' %}" alt=" " class="prof">
+                    <img src="{% static '../static/css/images/prof.png' %}" alt=" " class="prof">
                     <h2>ch.vaishnavy</h2>
                     <p class="title">Full-Time Investor</p>
                     <p>Hyd, India</p>

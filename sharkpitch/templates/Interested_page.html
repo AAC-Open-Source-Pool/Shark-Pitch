@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +6,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intrested button page</title>
-  <script src="(% static 'https://cdn.tailwindcss.com' %}"></script>
-  <link href="(% static 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' %}" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     .text-primary {
       color: #114E71;
@@ -43,14 +44,14 @@
   <!-- Navbar -->
   <nav class="bg-navbar p-2 flex justify-between font-bold items-center text-black">
     <div class="logo-container">
-      <img src="(% static '../assets/styles/images/shark_pitch_logo.jpg' %}" alt="" class="logo" />
+      <img src="{% static '../static/css/images/shark_pitch_logo.jpg' %}" alt="" class="logo" />
       <span class="text-black font-bold-32">SHARK PITCH</span>
     </div>
     <div class="flex items-center font-bold space-x-8">
       <a href="(% url 'home' %}" class="hover:text-black text-black font-bold">About Us</a>
       <a href="{% url 'home' %}" class="hover:text-black text-black font-bold">Contact Us</a>
       <a href="{% url 'home' %}" class="hover:text-black text-black font-bold">Logout</a>
-      <img src="(% static '../assets/styles/images/prof.png' %}" alt="" class="prof" />
+      <img src="{% static '../static/css/images/prof.png' %}" alt="" class="prof" />
     </div>
   </nav>
 
