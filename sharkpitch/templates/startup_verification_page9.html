@@ -17,7 +17,7 @@
         <nav>
             <a href="{% url 'home' %}" id="about">About Us</a>
             <a href="{% url 'home' %}" id="contact">Contact Us</a>
-            <a href="{% url 'home' %}" id="logout">Logout</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
             <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
         </nav>
     </header>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <button id="nextButton" onclick="window.location.href='{% url 'verification10' %}'">Next &#8594;</button>
+        <button id="nextButton" onclick="window.location.href='{% url 'Investor_landing' %}'">Next &#8594;</button>
     </div>
 
     <script>

@@ -17,7 +17,7 @@
         <nav>
             <a href="{% url 'home' %}" id="about">About Us</a>
             <a href="{% url 'home' %}" id="contact">Contact Us</a>
-            <a href="{% url 'home' %}" id="logout">Logout</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
             <img src="{% static 'images/profile.jpg" alt="Profile" id="prof">
         </nav>
     </header>
@@ -27,7 +27,7 @@
         <p class="step"><strong>Step 3:</strong></p>
         <div class="upload-box">
             <p>Upload your introduction pitch video, product pictures and statistics</p>
-            <input type="file" id="upload" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple>
+            <input method="post" type="file" id="upload" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple>
             <div class="icon-container">
                 <img src="{% static 'images/upload_icon.png' %}" alt="Upload Icon" class="icon">
                 <img src="{% static 'images/video_icon.png' %}" alt="Video Icon" class="icon">
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <button id="finishButton" onclick="window.location.href='{% url '_profile' %}'" type="submit">Finish</button>
+        <button id="finishButton" onclick="window.location.href='{% url 'Investor_landing' %}'" type="submit">Finish</button>
     </div>
 
     <script>

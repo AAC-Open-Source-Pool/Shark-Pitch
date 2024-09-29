@@ -1,4 +1,6 @@
 {% load static %}
+{% include 'header.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,27 +34,12 @@ a {
     }
 
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(17, 78, 113, 0.7);
-    padding: 10px 20px;
-    max-width: 100vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-#logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
 
 #shark {
     color: black;
@@ -214,19 +201,6 @@ button:hover {
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo-container">
-            <img src="{% static '../static/css/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
-            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
-        </div>
-        <nav>
-            <a href="{% url 'home' %}" id="about">About Us</a>
-            <a href="{% url 'home' %}" id="contact">Contact Us</a>
-            <a href="{% url 'home' %}" id="logout">Logout</a>
-            <img src="{% static '../static/css/images/prof.png' %}" alt=" " class="header_profile">
-        </nav>
-    </header>
 
     <!-- Investor Profile Section -->
     <div class="profile-container">
@@ -235,7 +209,7 @@ button:hover {
             <!-- Left Box with Profile Info -->
             <div class="profile-info-box">
                 <div class="profile-info">
-                    <img src="{% static '../static/css/images/prof.png' %}" alt=" " class="prof">
+                    <img src="{% static 'css/images/prof.png' %}" alt=" " class="prof">
                     <h2>ch.vaishnavy</h2>
                     <p class="title">Full-Time Investor</p>
                     <p>Hyd, India</p>
@@ -284,3 +258,4 @@ button:hover {
     </div>
 </body>
 </html>
+{% endblock %}

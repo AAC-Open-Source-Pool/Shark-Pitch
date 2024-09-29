@@ -34,3 +34,11 @@ def verification9(request):
     return render(request,'startup_verification_page9.html')
 def verification10(request):
     return render(request,'startup_verification_page10.html')
+def startup_info(request):
+    return render(request,'Startup_info.html')
+def interested(request):
+    return render(request,'Interested_page.html')
+def investor_description(request):
+    return render(request,'investor_description_page.html')
+def startup_home(request):
+    return render(request,'Startup_home.html')

@@ -17,7 +17,7 @@
         <nav>
             <a href="{% url 'home' %}" id="about">About Us</a>
             <a href="{% url 'home' %}" id="contact">Contact Us</a>
-            <a href="{% url 'home' %}" id="logout">Logout</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
             <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
         </nav>
     </header>
@@ -27,7 +27,7 @@
         <h2>Market and Competition</h2>
 
         <!-- Questions -->
-        <form id="questionsForm">
+        <form id="questionsForm" method="post">
             <div class="questions">
                 <div class="question">
                     <p>1. What problem are you solving?</p>
