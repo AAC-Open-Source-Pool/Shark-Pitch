@@ -1,5 +1,4 @@
 {% load static %}
-{% include 'header.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +8,7 @@
     <title>Startup Info</title>
     <link rel="stylesheet" href="{% static 'startupstyle.css' %}">
     <link rel="stylesheet" href="{% static 'header.css' %}">
-    <img class="logo" src="{% static 'images\shark_pitch_logo.jpg' %}">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -75,14 +73,27 @@
   }
 </script> 
 </head>
+<header>
+  <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
+ <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+ <nav>
+  <a href="{% url 'home' %}" id="about">About Us</a>
+  <a href="{% url 'home' %}" id="contact">Contact Us</a>
+  <a href="{% url 'home' %}" id="logout">Logout</a>
+  <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
+ </nav>
+</header>
 <body>
+  
  
 <p class="startup-name">Zepto</p>
 <p class="profile">Profile</p>
 <div style="display: flex; flex-direction:column;">
+ 
   <div class="startupinfo-profile">
-
+    
     <div style="display:flex;">
+      
         <p class="about"> <strong> Aadit Palicha</strong> and <strong>Kaivalya Vohra</strong>: Perfecting the 
       quick commerce playbook. <br>
       The co-founders of Zepto just wanted
