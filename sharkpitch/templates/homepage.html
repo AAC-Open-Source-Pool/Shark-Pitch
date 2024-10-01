@@ -1,4 +1,4 @@
-
+<!--
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <title>Document</title>
     
     <link rel="" href="../assets/styles/js/script.js">
-   <link rel="stylesheet" href="../assets/styles/css/homestyle.css">
+   <link rel="stylesheet" href="../assets/styles/css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -20,7 +20,7 @@
 </head>
 <body>
     
-    <div >
+    <div class="start" style="background-image: url(../assets/styles/images/);background-size:cover;background-repeat:no-repeat"></div>
 
        
        
@@ -136,11 +136,55 @@
 
     <br/>
     <br/>
--->
+
 
 
 <div class="page3">
-    
+  <div class="cardforstartup">
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../assets/styles/images/carousel2.png" alt="card-image" class="card-image"
+                        class="card-image">
+                        <p class="badge">know more</p>
+                         <h2 class="card-title">upload your pitch video</h2>
+                         <button class="card-button material-symbols-rounded">
+                            arrow_forward
+                         </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../assets/styles/images/invest1.png" alt="card-image" class="card-image"
+                        class="card-image">
+                        <p class="badge">know more</p>
+                         <h2 class="card-title">Grab investment</h2>
+                         <button class="card-button material-symbols-rounded">
+                            arrow_forward
+                         </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../assets/styles/images/collaborate.png" alt="card-image" class="card-image"
+                        class="card-image">
+                        <p class="badge">know more</p>
+                         <h2 class="card-title">Collaborate with other startups</h2>
+                         <button class="card-button material-symbols-rounded">
+                            arrow_forward
+                         </button>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+
+        </div>
+    </div> 
 <div class="startupcard">
   <h2 class="cardstartup">
     StartUps
@@ -307,4 +351,230 @@
 
     <script src="../assets/styles/js/script.js"></script>
 </body>
-</html>
+</html>-->
+{%load static %}
+{%static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{% static 'styles/css/homestyle.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>card Slider HTML & CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <div class="start" style="background-image: url('{% static 'styles/images/rocket.png' %}'); background-size: cover; background-repeat: no-repeat;">
+  
+    
+    <div class="navbar">
+        <img src="{% static 'styles/images/sharkpitchlogo.jpg' %}" id="sharkpitchlogo" alt="Shark Pitch Logo">
+        <h1 class="heading1">
+            SHARK PITCH
+        </h1>
+        <div class="nav">
+            <h2 class="up1" style="font-weight: bolder;">
+                About Us
+            </h2>
+            <h2 class="up2" style="font-weight: bolder;">
+                Contact Us.
+            </h2>
+            <h2 class="up3" style="font-weight: bolder;">
+                Register
+            </h2>
+        </div>
+    </div>
+    
+    <div class="scrollup">
+        <h2 id="startup" style="font-weight: bolder;">Start Ups</h2>
+        <h2 id="investors" style="font-weight: bolder;">Investors</h2>
+        <h2 id="heroes" style="font-weight: bolder;">Our Heroes</h2>
+    </div>
+    
+    <p class="quote"> 
+        Unleash The Financial Potential
+    </p>
+</div>
+<br/>
+<br/>
+    <div class="About">
+        <div class="info">
+            <h2 id="aboutus">
+                About Us
+            </h2>
+            <p id="para">
+                Shark Pitch will provide emerging startups with a platform to showcase their products and ideas to a broader 
+                investor base, <br/>facilitating funding and exposure to drive business growth and success.
+            </p>
+            <div class="logo">
+                <div id="insta">
+                    <img src="{% static 'styles/images/insta .png' %}" id="insta" alt="Instagram">
+                </div>
+                <div id="facebook">
+                    <img src="{% static 'styles/images/facebook.png' %}" id="facebook" alt="Facebook">
+                </div>
+                <div id="email">
+                    <img src="{% static 'styles/images/email.png' %}" id="email" alt="Email">
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="{% static 'styles/images/aboutus.png' %}" id="shake" alt="About Us">
+        </div>
+    </div>
+
+    <div class="page3">
+        <div class="cardforstartup">
+            <div class="container swiper">
+                <div class="card-wrapper">
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="{% static 'styles/images/carousel2.png' %}" alt="card-image" class="card-image">
+                                <p class="badge">know more</p>
+                                <h2 class="card-title">upload your pitch video</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="{% static 'styles/images/invest1.png' %}" alt="card-image" class="card-image">
+                                <p class="badge">know more</p>
+                                <h2 class="card-title">Grab investment</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="{% static 'styles/images/collaborate.png' %}" alt="card-image" class="card-image">
+                                <p class="badge">know more</p>
+                                <h2 class="card-title">Collaborate with other startups</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="investorcard">
+            <h2 class="cardinvestors">
+                Investors
+            </h2>
+            <div class="cards-container">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'styles/images/invest4.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">View incredible pitches.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'styles/images/invest2.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Select your favourite one.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'styles/images/invest3.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">And make your deal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page4">
+            <div class="box">
+                <h2 class="heading2" style="align-items: center;">
+                    Our Heroes
+                </h2>
+                <div class="ourheroescards">
+                    <div class="cardzomato">
+                        <img src="{% static 'styles/images/zomato.png' %}" class="zoom" alt="Zomato">
+                        <div class="cardinfo">
+                            <h2>Zomato</h2>
+                            <p>Founder:Depinder</p>
+                            <div class="cardbutton">
+                                <button class="btn btn-primary">View more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardzepto">
+                        <img src="{% static 'styles/images/zepto.png' %}" alt="Zepto" class="zoomzepto">
+                        <div class="cardinfo">
+                            <h2>Zepto</h2>
+                            <p>Founder:Aadit Palicha</p>
+                            <div class="cardbutton">
+                                <button class="btn btn-primary">View more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardswiggy">
+                        <img src="{% static 'styles/images/swiggy.png' %}" alt="Swiggy" class="zoomswiggy">
+                        <div class="cardinfo">
+                            <h2>Swiggy</h2>
+                            <p>Founder:Sriharsha Majety</p>
+                            <div class="cardbutton">
+                                <button class="btn btn-primary">View more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-item1"><span style="color: rgb(24, 122, 207);">Shark Pitch</span> in Numbers</div>
+                <div class="grid-item2">
+                    <div class="sharksuccesses">
+                        <h2 class="k">2K+</h2>
+                        <h3 class="h2">Investors</h3>
+                    </div>
+                </div>
+                <div class="grid-item3"></div>  
+                <div class="grid-item4">
+                    <h2 class="k">9K+</h2>
+                    <h3 class="h2">Start Ups</h3>
+                </div>
+                <div class="grid-item5"></div>
+                <div class="grid-item6">
+                    <h2 class="k">10+</h2>
+                    <h3 class="h2">Unicorns</h3>
+                </div>  
+            </div>
+            
+            <div class="page6">
+                <div class="contactus">
+                    <div class="last">
+                        <h5 class="tnc">Terms and Conditions</h5>
+                        <h5 class="faq">FAQs</h5>
+                        <h5 class="us">About Us</h5>
+                    </div>
+                    <hr class="hrtag"/>
+                    <h2>Contact Us</h2>
+                    <p>Call Us at:</p>
+                    <p>18000 3456</p>
+                    <p>Gmail:</p>
+                    <p>Shark Pitch@gmail.com</p>
+                    <p>Copyright © 2024 - All rights reserved</p>
+                </div>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="{% static 'styles/js/script.js' %}"></script>
+            </body>
+            </html>
+            

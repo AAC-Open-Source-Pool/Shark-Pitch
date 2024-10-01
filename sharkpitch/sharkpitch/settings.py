@@ -78,8 +78,15 @@ WSGI_APPLICATION = 'sharkpitch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',      # Replace with your Neon DB name
+        'USER': 'neondb_owner',  # Replace with your Neon username
+        'PASSWORD': '8B2GZMCVTPna',  # Replace with your Neon password
+        'HOST': 'ep-noisy-pond-a5mw068r.us-east-2.aws.neon.tech',  # Replace with your Neon DB host
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',  # Ensure SSL connection to Neon
+        },
     }
 }
 
