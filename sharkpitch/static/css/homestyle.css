@@ -98,6 +98,8 @@ font-weight: bold;
 }
 .logo{
 display: flex;
+height: 87px;
+width:100px;
 }
 #insta{
 height: 60px;

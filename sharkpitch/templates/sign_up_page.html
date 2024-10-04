@@ -44,7 +44,7 @@
                 </div>
                 
                 <p><strong>Sign up as:</strong></p>
-                <button type="button" class="role-button" >Investor</button>
+                <button type="button" class="role-button" onclick="window.location.href='{% url 'login' %}'">Investor</button>
                 <button type="button" class="role-button" onclick="window.location.href='{% url 'verification1' %}'">Entrepreneur</button>
                 <button type="button" class="role-button"onclick="window.location.href='{% url 'Investor_landing' %}'">User</button>
             </form>
