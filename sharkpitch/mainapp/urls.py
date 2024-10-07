@@ -1,21 +1,25 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path,include
 from . import views 
-
 urlpatterns = [
-    path('login', views.login, name='login'),
-    path('sign_up', views.sign_up, name='sign_up'),
-
-    path('startup_verification_page1', views.startup_verification1, name='startup_verification1'),
-    path('startup_verification_page2', views.startup_verification2, name='startup_verification2'),
-    path('startup_verification_page3', views.startup_verification3, name='startup_verification3'),
-    path('startup_verification_page4', views.startup_verification4, name='startup_verification4'),
-    path('startup_verification_page5', views.startup_verification5, name='startup_verification5'),
-    path('startup_verification_page6', views.startup_verification6, name='startup_verification6'),
-    path('startup_verification_page7', views.startup_verification7, name='startup_verification7'),
-    path('startup_verification_page8', views.startup_verification8, name='startup_verification8'),
-    path('startup_verification_page9', views.startup_verification9, name='startup_verification9'),
-    path('startup_verification_page10', views.startup_verification10, name='startup_verification10'),
-
-    path('investor_description', views.investor_description, name='investor_description'),
+    path('home',views.home,name='home'),
+    path('investor_landing',views.Investor_landing,name='Investor_landing'),
+    path('Investor_profile',views.Investor_profile,name='Investor_profile'),
+    path('',views.User_profile,name='User_profile'),
+    path('login',views.login,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('verification1',views.verification1,name='verification1'),
+    path('verification2',views.verification2,name='verification2'),
+    path('verification3',views.verification3,name='verification3'),
+    path('verification4',views.verification4,name='verification4'),
+    path('verification5',views.verification5,name='verification5'),
+    path('verification6',views.verification6,name='verification6'),
+    path('verification7',views.verification7,name='verification7'),
+    path('verification8',views.verification8,name='verification8'),
+    path('verification9',views.verification9,name='verification9'),
+    path('verification10',views.verification10,name='verification10'),
+    path('investor_description',views.investor_description,name='investor_description'),
+    path('interested',views.interested,name='interested'),
+    path('startup_info',views.startup_info,name='startup_info'),
+    path('startup_home',views.startup_home,name='startup_home'),
 ]

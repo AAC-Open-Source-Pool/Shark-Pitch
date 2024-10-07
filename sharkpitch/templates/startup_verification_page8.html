@@ -12,12 +12,12 @@
     <header>
         <div class="logo-container">
             <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
-            <a href="Home.html" id="shark">SHARK PITCH</a>
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
-            <a href="Home.html" id="about">About Us</a>
-            <a href="Home.html" id="contact">Contact Us</a>
-            <a href="Home.html" id="logout">Logout</a>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
             <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
         </nav>
     </header>
@@ -27,7 +27,7 @@
         <h2>Miscellaneous</h2>
 
         <!-- Questions -->
-        <form id="questionsForm">
+        <form id="questionsForm" method="post">
             <div class="questions">
                 <div class="question">
                     <p>1. How did you come up with this idea?</p>
@@ -42,7 +42,7 @@
                     <input type="text" id="totalAddressableMarket" placeholder="Investors want to know about the competitive landscape and how the startup stands out.">
                 </div>
                 
-                <button type="submit">Next</button>
+                <button type="button" onclick="window.location.href='{% url 'verification9' %}'">Next</button>
             </div>
         </form>
     </div>

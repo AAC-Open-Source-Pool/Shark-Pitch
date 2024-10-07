@@ -12,12 +12,12 @@
     <header>
         <div class="logo-container">
             <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
-            <a href="Home.html" id="shark">SHARK PITCH</a>
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
-            <a href="Home.html" id="about">About Us</a>
-            <a href="Home.html" id="contact">Contact Us</a>
-            <a href="Home.html" id="logout">Logout</a>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
             <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
         </nav>
     </header>
@@ -26,15 +26,15 @@
     <div class="verify-container">
         <h2>Verify your Company/Profile</h2>
 
-        <form id="verifyForm">
+        <form id="verifyForm" method="post">
             <p><strong>Step 1:</strong></p>
-            <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number">
+            <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" method>
             <input type="file" id="upload" placeholder="Upload your documents here">
             
             <p><strong>Step 2:</strong> Answer the questions about your company</p>
             <p><em>*Optional Fields: Please Complete Only Relevant Information*</em></p>
 
-            <button type="submit">Let’s get started with the questions</button>
+            <button type="button" onclick="window.location.href='{% url 'verification2' %}'">Let’s get started with the questions</button>
         </form>
     </div>
 

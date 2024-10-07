@@ -12,12 +12,12 @@
     <header>
         <div class="logo-container">
             <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
-            <a href="Home.html" id="shark">SHARK PITCH</a>
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
         </div>
         <nav>
-            <a href="Home.html" id="about">About Us</a>
-            <a href="Home.html" id="contact">Contact Us</a>
-            <a href="Home.html" id="register">Register</a>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="register">Login</a>
         </nav>
     </header>
 
@@ -26,7 +26,7 @@
         <!-- Left Column with Form -->
         <div class="signup-form">
             <h2>Sign up</h2>
-            <p>Already have an account? <a href="login">Login here</a></p>
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
             <form>
                 <div class="form-group">
                     <label for="name"><strong>Name:</strong></label>
@@ -44,9 +44,9 @@
                 </div>
                 
                 <p><strong>Sign up as:</strong></p>
-                <button type="button" class="role-button">Investor</button>
-                <button type="button" class="role-button">Entrepreneur</button>
-                <button type="button" class="role-button">User</button>
+                <button type="button" class="role-button" >Investor</button>
+                <button type="button" class="role-button" onclick="window.location.href='{% url 'verification1' %}'">Entrepreneur</button>
+                <button type="button" class="role-button"onclick="window.location.href='{% url 'Investor_landing' %}'">User</button>
             </form>
         </div>
         
