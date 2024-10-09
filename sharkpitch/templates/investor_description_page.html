@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Description</title>
+    <link rel="stylesheet" href="{% static 'css/investor_description_page.css' %}">
+</head>
+
+  <!-- Header Section -->
+<header>
+    <div class="logo-container">
+        <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
+        <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+    </div>
+    <nav>
+        <a href="{% url 'home' %}" id="about">About Us</a>
+        <a href="{% url 'home' %}" id="contact">Contact Us</a>
+        <a href="{% url 'home' %}" id="logout">Logout</a>
+        <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
+    </nav>
+</header>
+<body>
+
+    <!-- Investor Profile Section -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <!-- Left Box with Profile Info -->
+            <div class="profile-info-box">
+                <div class="profile-info">
+                    <img src="{% static 'images/profile.jpg' %}" alt="Profile Avatar" class="avatar">
+                    <h2>R. Raghuram</h2>
+                    <p class="title">Full-Time Investor</p>
+                    <p>Hyd, India</p>
+                </div>
+            </div>
+
+            <!-- Right Box with Profile Details -->
+            <div class="profile-details-box">
+                <div class="profile-details">
+                    <table>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>R. Raghuram</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profession</strong></td>
+                            <td>Founder Chairman of Stark Industries, Investor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E-mail</strong></td>
+                            <td>rraghuram@starkindustries.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact no.</strong></td>
+                            <td>9876543210</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>Hyd, India</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Previous Investments</strong></td>
+                            <td>Boat, Cred, Skyroot Aerospace</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button>Communicate with Investor</button>
+            <button>Real-time Video Conference</button>
+        </div>
+    </div>
+   
+</body>
+</html>

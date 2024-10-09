@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product and Technology</title>
+    <link rel="stylesheet" href="{% static 'css/startup_verification_pages/page2.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
+            <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
+        </nav>
+    </header>
+
+    <!-- Product and Technology Section -->
+    <div class="questions-container">
+        <h2>Product and Technology</h2>
+
+        <!-- Questions -->
+        <form id="questionsForm" method="post">
+            <div class="questions">
+                <div class="question">
+                    <p>1. What is your product or service?</p>
+                    <input type="text" id="productService" placeholder="Investors want to understand the core offering and its unique features.">
+                </div>
+                <div class="question">
+                    <p>2. What are the key technical aspects and intellectual property (IP) involved in your startup?</p>
+                    <input type="text" id="technicalAspectsIP" placeholder="Investors want to know about the technical aspects and any intellectual property involved.">
+                </div>
+                
+                <button type="button" onclick="window.location.href='{% url 'verification6' %}'">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input values
+            const productService = document.getElementById('productService').value;
+            const technicalAspectsIP = document.getElementById('technicalAspectsIP').value;
+
+            // Store the values in local storage
+            localStorage.setItem('productService', productService);
+            localStorage.setItem('technicalAspectsIP', technicalAspectsIP);
+
+            this.submit();
+
+            // Redirect to the next page
+            window.location.href = 'startup_verification_page6';
+        });
+    </script>
+</body>
+</html>

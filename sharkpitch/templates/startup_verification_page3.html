@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market and Competition</title>
+    <link rel="stylesheet" href="{% static 'css/startup_verification_pages/page2.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
+            <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
+        </nav>
+    </header>
+
+    <!-- Financials and Business Model Section -->
+    <div class="questions-container">
+        <h2>Market and Competition</h2>
+
+        <!-- Questions -->
+        <form id="questionsForm" method="post">
+            <div class="questions">
+                <div class="question">
+                    <p>1. What problem are you solving?</p>
+                    <input type="text" id="problemSolved" placeholder="Investors want to understand the problem the startup is addressing and its significance.">
+                </div>
+                <div class="question">
+                    <p>2. What's the point of difference – why can’t anyone just do this?</p>
+                    <input type="text" id="pointOfDifference" placeholder="Investors seek to know what sets the startup apart from others in the market.">
+                </div>
+                <div class="question">
+                    <p>3. What is the total addressable market (TAM)?</p>
+                    <input type="text" id="totalAddressableMarket" placeholder="Investors seek to know what sets the startup apart from others in the market.">
+                </div>
+                
+                <button type="button" onclick="window.location.href='{% url 'verification4' %}'">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input values
+            const problemSolved = document.getElementById('problemSolved').value;
+            const pointOfDifference = document.getElementById('pointOfDifference').value;
+            const totalAddressableMarket = document.getElementById('totalAddressableMarket').value;
+
+            // Store the values in local storage
+            localStorage.setItem('problemSolved', problemSolved);
+            localStorage.setItem('pointOfDifference', pointOfDifference);
+            localStorage.setItem('totalAddressableMarket', totalAddressableMarket);
+
+            // Redirect to the next page (page4.html)
+            window.location.href = 'startup_verification_page4';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing and Terms</title>
+    <link rel="stylesheet" href="{% static 'css/startup_verification_pages/page2.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
+            <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
+        </nav>
+    </header>
+
+    <!-- Timing and Terms Section -->
+    <div class="questions-container">
+        <h2>Timing and Terms</h2>
+
+        <!-- Questions -->
+        <form id="questionsForm" method="post">
+            {% csrf_token %}
+            <div class="questions">
+                <div class="question">
+                    <p>1. How much are you looking to raise and what are the terms?</p>
+                    <input type="text" id="fundingAmountTerms" placeholder="Investors want to know the funding requirements and the terms of the investment.">
+                </div>
+                <div class="question">
+                    <p>2. What are the potential risks to the business?</p>
+                    <input type="text" id="businessRisks" placeholder="Describe any potential risks to the business.">
+                </div>
+                
+                <button type="button" onclick="window.location.href='{% url 'verification8' %}'">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('questionsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input values
+            const fundingAmountTerms = document.getElementById('fundingAmountTerms').value;
+            const businessRisks = document.getElementById('businessRisks').value;
+
+            // Store the values in local storage
+            localStorage.setItem('fundingAmountTerms', fundingAmountTerms);
+            localStorage.setItem('businessRisks', businessRisks);
+
+            this.submit();
+            // Redirect to the next page
+            window.location.href = 'startup_verification_page8';
+        });
+    </script>
+</body>
+</html>

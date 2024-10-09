@@ -1,0 +1,136 @@
+{% load static %}
+{% include 'header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Info</title>
+    <link rel="stylesheet" href="{% static 'startupstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<script type="text/javascript">
+  // Load Google Charts library and the necessary packages
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawCharts);
+
+  // Function to draw both charts
+  function drawCharts() {
+      drawPieChart();
+      drawColumnChart();
+  }
+
+  // Function to draw the Pie Chart
+  function drawPieChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['Financial Term', 'Percentage'],
+          ['Revenue', 50],
+          ['Expenses', 30],
+          ['profit', 15],
+          ['Debt', 15],
+         
+      ]);
+
+      var options = {
+          title: 'Financial Breakdown',
+          is3D: true,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+  }
+
+  // Function to draw the Column Chart
+  function drawColumnChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['Month', 'Revenue Growth(%)','customer Growth (%)','profit Growth (%)' ],
+          ['January', 10, 5,7],
+          ['February', 15, 8,9],
+          ['March', 20, 12,11],
+          ['April', 25,15, 14]
+      ]);
+
+      var options = {
+          title: 'Monthly Growth Matrix',
+          chartArea: {width: '50%'},
+          hAxis: {
+              title: 'Month',
+          },
+          vAxis: {
+              title: 'Growth Percentage(%)',
+            
+          },
+          bars: 'vertical',
+          colors: ['#1b9e77', '#d95f02']
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+      chart.draw(data, options);
+  }
+</script> 
+</head>
+<body>
+  
+ 
+<p class="startup-name">Zepto</p>
+<p class="profile">Profile</p>
+<div style="display: flex; flex-direction:column;">
+ 
+  <div class="startupinfo-profile">
+    
+    <div style="display:flex;">
+      
+        <p class="about"> <strong> Aadit Palicha</strong> and <strong>Kaivalya Vohra</strong>: Perfecting the 
+      quick commerce playbook. <br>
+      The co-founders of Zepto just wanted
+      to solve a big problem during the pandemic. <br>
+      The solution has become one of the fastest-growing internet companies in India</p>
+    </div> 
+    <div style="width:400px;" ><img  class="profile-pic"  src="{% static 'images\founders.jpg' %}" ></div>
+    <!--sharkpitch\static\images\founders.jpg-->
+  </div>
+  <div>
+      <div>
+      <p class="About">About</p>
+      <p class="info">Headquartered in Mumbai, Zepto is present across 10 major cities in the country, 1000+ employees strong,
+      and delivers 3000+ products, including fresh fruits and vegetables, daily cooking essentials, dairy, 
+      health-and-hygiene products, etc., to Indian homes within 10 minutes.</p>
+      </div>
+      <div>
+      <video class ="videoplayer" width="500" height="300" controls>
+          <source src="{% static 'styles/videos/pitch1.mp4' %}" type="video/mp4">
+              </video>
+      </div>
+      </div>
+     
+      
+        
+          <div class="chart-container">
+            <!-- Pie chart -->
+            <div id="piechart" class="chart"></div>
+            <!-- Column chart -->
+            <div id="barchart" class="chart"></div>
+        </div>
+      
+        
+         
+         <div class="button" >
+        <button class="intersted-button" onclick="window.location.href='{% url 'interested' %}'">Intersted</button>
+      </div>
+
+</div>
+
+     </body>
+</html>
+{% endblock content %}
+
+
+  
+    
+    
+   

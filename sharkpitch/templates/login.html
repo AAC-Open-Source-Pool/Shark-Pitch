@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="Shark Pitch Logo" id="logo">
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'signup' %}" id="register">Register</a>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <!-- Left Column with Form -->
+        <div class="login-form">
+            <h2>Login</h2>
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+            <form>
+                <div class="form-group">
+                    <label for="name"><strong>Name:</strong></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><strong>Email ID:</strong></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><strong>Password:</strong></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <!-- Login Button -->
+                <button type="button" class="role-button" onclick="window.location.href='{% url 'Investor_landing' %}'">Login</button>
+            </form>
+        </div>
+        
+        <!-- Right Column with Image -->
+        <div class="login-image">
+            <img src="{% static 'images\sign_up.jpg' %}" alt="Login Illustration">
+        </div>
+    </div>
+</body>
+</html>

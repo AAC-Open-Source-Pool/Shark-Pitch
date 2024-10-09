@@ -1,13 +1,102 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html><h1>
 
-</h1>
+    <title>investor landing</title>
+    <link rel="stylesheet" href="{% static 'styles/css/Investor_landing.css' %}">
+</head>
+<body>  
+    <header>
+        <img src="{% static 'styles/images/shark_pitch_logo.jpg' %}" alt="" id="logo">
+       <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+       <div id="sb">
+        <label class="input input-bordered flex items-center gap-2" id="sb" >
+            <svg
+            id="sicon"  
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            class="h-4 w-4 opacity-70">
+            <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd" />
+            </svg>
+            <input type="text" placeholder="Search" id="search-bar"/>
+        </label>          
+    </div>
+        <a href="{% url 'home' %}" id="about">About Us</a>
+        <a href="{% url 'home' %}" id="contact">Contact Us</a>
+        <a href="{% url 'home' %}" id="logout">Logout</a>
+        <img src="{% static 'styles/images/profile.jpg' %}" alt="" id="prof">
+    </header>
+    <div id="domains">
+        <h2 id="dom">DOMAINS :</h2>
+        <ul id="unl">
+        <li class="category" data-category="food">FOOD</li>
+        <li class="category" data-category="life style">LIFE STYLE</li>
+        <li class="category" data-category="education">EDUCATION</li>
+        <li class="category" data-category="finance">FINANCE</li>
+        <li class="category" data-category="health">HEALTH</li>
+        <li class="category" data-category="others">OTHERS</li>
+        <li class="category" data-category="all">SHOW ALL</li>
+        </ul>
+    </div>
+    <div id="h3">
+        
+        <div id="dd">
+            <details class="dropdown" id="dd1">
+                <summary class="btn m-1" id="filter">Filter by</summary>
+                <div id="dropdown-content">
+                    <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow" id="dd1">
+                    <li>Lastest</li>
+                    <li>Oldest</li>
+                    <li>Service</li>
+                    <li>Product</li>
+                    <li>Growth</li>
+                    <li>Value</li>
+                    </ul>
+                </div>
+              </details>
+        </div>
+    </div>
+    
+    <br id="br">
+    <div>
+    <div class="video-container">
+        <div class="video-item" id="clickable-video" data-tag="food">
+            <video id="uploadedVideo"  src="{% static 'styles/videos/pitch1.mp4' %}" controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">XL8's pitch</h2>
+            <p id="us">by Tim  , a founder and Ceo at XL8</p>
+        </div>
+        <div class="video-item" id="clickable-video" data-tag="others">
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch2.mp4' %}"  controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">TedXSouthbank</h2>
+            <p id="us">by Joseph Knox Wheeler</p>
+        </div>
+        <div  class="video-item" id="clickable-video" data-tag="life style">
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch5.mp4' %}"  controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">Jack stands</h2>
+            <p id="us">by Jackie and Stephen</p>
+            </div>
+        <div  class="video-item" id="clickable-video" data-tag="education">
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch3.mp4' %}"  controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">Goodybag</h2>
+            <p id="us">by Jay Panchal</p>
+        </div>
+        <div  class="video-item" id="clickable-video" data-tag="finance">
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch4.mp4' %}"  controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">Doordash</h2>
+            <p id="us">by Tony Xu , CEO and co-founder</p>
+        </div>
+        <div  class="video-item" id="clickable-video" data-tag="health">
+            <video id="uploadedVideo" src="{% static 'styles/videos/pitch5.mp4' %}"  controls></video>
+            <h2 id="us" class="video-name" onclick="window.location.href='{% url 'startup_home' %}'">Jack stands</h2>
+            <p id="us">by Jackie and Stephen</p>
+        </div>
+
+    <script src="{% static 'styles/js/Investor_landing.js' %}"></script>
+</body>
+</html>
