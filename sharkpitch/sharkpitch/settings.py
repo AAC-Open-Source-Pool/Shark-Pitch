@@ -74,18 +74,16 @@ WSGI_APPLICATION = 'sharkpitch.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neondb',      # Replace with your Neon DB name
-        'USER': 'neondb_owner',  # Replace with your Neon username
-        'PASSWORD': '8B2GZMCVTPna',  # Replace with your Neon password
-        'HOST': 'ep-noisy-pond-a5mw068r.us-east-2.aws.neon.tech',  # Replace with your Neon DB host
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',  # Ensure SSL connection to Neon
-        },
+
+        'NAME': 'telusko',
+        'USER': 'postgres',
+        'PASSWORD':'1234',
+        'HOST': 'localhost'
+        
+
     }
 }
 
@@ -142,3 +140,5 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# settings.py
+SECURE_SSL_REDIRECT = True
