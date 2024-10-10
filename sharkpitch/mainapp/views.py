@@ -1,11 +1,44 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
+
 def home(request):
     return render(request,'homepage.html')
-
-def Intrested_page(request):
-    return render(request,'Interested_page.html')
-
-def Startup_info(request):
+def Investor_landing(request):
+    return render(request,'investor_landing.html')
+def Investor_profile(request):
+    return render(request,'investor_profile.html')
+def User_profile(request):
+    return render(request,'user_profile.html')
+def login(request):
+    return render(request,'login.html')
+def signup(request):
+    return render(request,'sign_up_page.html')
+def verification1(request):
+    return render(request,'startup_verification_page1.html')
+def verification2(request):
+    return render(request,'startup_verification_page2.html')
+def verification3(request):
+    return render(request,'startup_verification_page3.html')
+def verification4(request):
+    return render(request,'startup_verification_page4.html')
+def verification5(request):
+    return render(request,'startup_verification_page5.html')
+def verification6(request):
+    return render(request,'startup_verification_page6.html')
+def verification7(request):
+    return render(request,'startup_verification_page7.html')
+def verification8(request):
+    return render(request,'startup_verification_page8.html')
+def verification9(request):
+    return render(request,'startup_verification_page9.html')
+def verification10(request):
+    return render(request,'startup_verification_page10.html')
+def startup_info(request):
     return render(request,'Startup_info.html')
+def interested(request):
+    return render(request,'Interested_page.html')
+def investor_description(request):
+    return render(request,'investor_description_page.html')
+def startup_home(request):
+    return render(request,'Startup_home.html')

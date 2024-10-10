@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Company/Profile</title>
+    <link rel="stylesheet" href="{% static 'css/startup_verification_pages/page1.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/shark_pitch_logo.jpg' %}" alt="" id="logo">
+            <a href="{% url 'home' %}" id="shark">SHARK PITCH</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}" id="about">About Us</a>
+            <a href="{% url 'home' %}" id="contact">Contact Us</a>
+            <a href="{% url 'login' %}" id="logout">Login</a>
+            <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
+        </nav>
+    </header>
+
+    <!-- Verify Company/Profile Section -->
+    <div class="verify-container">
+        <h2>Verify your Company/Profile</h2>
+
+        <form id="verifyForm" method="post">
+            <p><strong>Step 1:</strong></p>
+            <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" method>
+            <input type="file" id="upload" placeholder="Upload your documents here">
+            
+            <p><strong>Step 2:</strong> Answer the questions about your company</p>
+            <p><em>*Optional Fields: Please Complete Only Relevant Information*</em></p>
+
+            <button type="button" onclick="window.location.href='{% url 'verification2' %}'">Let’s get started with the questions</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Get the input values
+            const srnNumber = document.getElementById('srnNumber').value;
+            const uploadFile = document.getElementById('upload').files[0]; // File input
+
+            // Store the values in local storage or session storage
+            localStorage.setItem('srnNumber', srnNumber);
+
+            // Redirect to the next page
+            window.location.href = 'startup_verification_page2';
+        });
+    </script>
+</body>
+</html>
