@@ -27,7 +27,7 @@
         <p class="step"><strong>Step 3:</strong></p>
         <div class="upload-box">
             <p>Upload your introduction pitch video, product pictures and statistics</p>
-            <input method="post" type="file" id="upload" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple>
+            <input method="post" type="file" id="upload" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple required>
             <div class="icon-container">
                 <img src="{% static 'images/upload_icon.png' %}" alt="Upload Icon" class="icon">
                 <img src="{% static 'images/video_icon.png' %}" alt="Video Icon" class="icon">
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <button id="finishButton" onclick="window.location.href='{% url 'Investor_landing' %}'" type="submit">Finish</button>
+        <button id="finishButton" onclick="window.location.href='{% url 'login' %}'" type="button">Finish</button>
     </div>
 
     <script>
@@ -63,8 +63,9 @@
                 localStorage.setItem('uploadedFiles', JSON.stringify([]));
             }
 
+            this.submit();
             // Redirect to the next page (startup_verification_page1.html)
-            window.location.href = 'startup_verification_page1.html';
+            window.location.href = 'Investor_landing.html';
         });
     </script>
 </body>

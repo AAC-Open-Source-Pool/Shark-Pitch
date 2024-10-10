@@ -17,6 +17,7 @@ urlpatterns=[
     path('verification8/',views.startup_register8_view,name='startup_register8_view'),
     path('verification9/',views.startup_register9_view,name='startup_register9_view'),
     path('verification10/',views.startup_register10_view,name='startup_register10_view'),
+    path('signup/',views.signup_view,name='signup_view'),
      path('logout/', views.logout, name='logout'),
 ]
 

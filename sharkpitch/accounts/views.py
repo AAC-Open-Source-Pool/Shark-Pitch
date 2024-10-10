@@ -2,8 +2,36 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from .models import *
 from django.contrib.auth.models import User,auth
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
+
+#signUp
+
+def signup_view(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        # Check if email already exists
+        if Signin.objects.filter(email=email).exists():
+            messages.error(request, "Email already exists")
+        else:
+            # Hash the password before saving it
+            hashed_password = make_password(password)
+            
+            # Create a new user account
+            new_user = Signin(name=name, email=email, password=hashed_password)
+            new_user.save()
+
+            messages.success(request, "Account created successfully!")
+            return redirect('login')  # Redirect to sign-in page after successful sign-up
+
+    return render(request, 'sign_up_page.html')
+
+
+
 # Login View
 def login_view(request):
     if request.method == 'POST':
@@ -17,6 +45,7 @@ def login_view(request):
         except login.DoesNotExist:
             messages.error(request, 'Invalid email or password.')
     return render(request, 'login.html')
+
 
 # Startup Registration Step 1
 def startup_register1_view(request):
