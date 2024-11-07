@@ -26,7 +26,7 @@
     <div class="verify-container">
         <h2>Verify your Company/Profile</h2>
 
-        <form id="verifyForm" method="post">
+        <form id="verifyForm" method="post" action="{% url 'accounts:startup_register1_view' %}">
             <p><strong>Step 1:</strong></p>
             <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" required>
             <input type="file" id="upload" placeholder="Upload your documents here" required>
@@ -34,7 +34,7 @@
             <p><strong>Step 2:</strong> Answer the questions about your company</p>
             <p><em>*Optional Fields: Please Complete Only Relevant Information*</em></p>
 
-            <button  onclick="window.location.href='{% url 'verification2' %}'">Let’s get started with the questions</button>
+            <button type="submit" >Let’s get started with the questions</button>
         </form>
     </div>
 
@@ -50,7 +50,6 @@
             localStorage.setItem('srnNumber', srnNumber);
 
             // Redirect to the next page
-            window.location.href = 'startup_verification_page2';
         });
     </script>
 </body>
