@@ -83,7 +83,8 @@ DATABASES = {
         'NAME': 'shark',      
         'USER': 'postgres',  
         'PASSWORD': '1014',  
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'port':'5342',
     }
 }
 

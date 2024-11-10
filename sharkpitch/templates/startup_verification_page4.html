@@ -27,7 +27,7 @@
         <h2>Team and Experience</h2>
 
         <!-- Questions -->
-        <form id="questionsForm" method="post">
+        <form id="questionsForm" method="post" action="{% url 'accounts:startup_register4_view' %}">
             <div class="questions">
                 <div class="question">
                     <p>1. What is your background and experience?</p>
@@ -38,7 +38,7 @@
                     <input type="text" id="teamComposition" placeholder="Investors want to know about the team structure, roles, and responsibilities.">
                 </div>
                 
-                <button type="button" onclick="window.location.href='{% url 'verification5' %}'">Next</button>
+                <button type="submit">Next</button>
             </div>
         </form>
     </div>
@@ -56,7 +56,7 @@
             localStorage.setItem('teamComposition', teamComposition);
 
             // Redirect to the next page
-            window.location.href = 'startup_verification_page5.html';
+            
         });
     </script>
 </body>

@@ -27,7 +27,7 @@
         <h2>Financials and Business Model</h2>
 
         <!-- Questions -->
-        <form id="questionsForm" method="post">
+        <form id="questionsForm" method="post" action="{% url 'accounts:startup_register1_view' %}">
             <div class="questions">
                 <div class="question">
                     <p>1. How do you make money?</p>
@@ -61,7 +61,7 @@
                     <p>8. How do you manage your cash flow?</p>
                     <input type="text" id="cashFlowManagement" placeholder="Investors want to know how the company manages its cash flow and how it plans to maintain a healthy cash position.">
                 </div>
-                <button type="button"  onclick="window.location.href='{% url 'verification3' %}'">Next</button>
+                <button type="submit">Next</button>
             </div>
         </form>
     </div>
@@ -91,7 +91,7 @@
             localStorage.setItem('cashFlowManagement', cashFlowManagement);
 
             // Redirect to the next page (page3.html)
-            window.location.href = 'startup_verification_page3';
+          
         });
     </script>
 </body>
