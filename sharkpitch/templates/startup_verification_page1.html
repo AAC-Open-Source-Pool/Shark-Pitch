@@ -28,13 +28,13 @@
 
         <form id="verifyForm" method="post">
             <p><strong>Step 1:</strong></p>
-            <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" method>
-            <input type="file" id="upload" placeholder="Upload your documents here">
+            <input type="text" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" required>
+            <input type="file" id="upload" placeholder="Upload your documents here" required>
             
             <p><strong>Step 2:</strong> Answer the questions about your company</p>
             <p><em>*Optional Fields: Please Complete Only Relevant Information*</em></p>
 
-            <button type="button" onclick="window.location.href='{% url 'verification2' %}'">Let’s get started with the questions</button>
+            <button  onclick="window.location.href='{% url 'verification2' %}'">Let’s get started with the questions</button>
         </form>
     </div>
 

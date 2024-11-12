@@ -1,0 +1,124 @@
+body{
+  font-family: Inter;
+}
+
+
+.startup-name{
+    /*font-family: Inter;
+   font-size: 35px;
+   font-weight: 500;*/
+   text-align: left;
+   margin-bottom: 40px;
+   
+    font-size: 36px;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #00468B;
+   
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+   
+   }
+   .profile{
+   height: 30px;
+   font-family: Inter;
+   font-size: 20px;
+   font-weight: 400;
+   line-height: 0PX;
+   text-align: left;
+   margin-bottom: 5px;
+   
+   }
+   .about{
+     font-family: Inter;
+   font-size: 20px;
+   font-weight:300px;
+   line-height: 35px;
+   text-align: left;
+   
+   }
+   .startupinfo-profile{
+   display: flex;
+   padding: 0;
+   margin: 0;
+   
+    
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    /*padding-top: 20px;*/
+    padding: 10px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+
+   }
+   .About{
+     font-family: Inter;
+   font-size: 40px;
+   font-weight: 350;
+   text-align: left;
+   margin: 0;
+   padding: 0;
+   }
+   .info{
+     font-family: Inter;
+   font-size: 20px;
+   font-weight: 400;
+   line-height: 30px;
+   text-align: left;
+   
+   }
+   .button{
+     text-align: center;
+     display: flex;
+     justify-content: center;
+   }
+   .intersted-button{
+      color:white;
+      background-color:#114E71;
+      border-radius: 10px;
+      width: 200px;
+      height:30px;
+      border:none;
+       }
+   .profile-pic{
+       
+     width: 250px;
+     height: 150px;
+     object-fit: cover;
+     margin-left: 150px;
+    
+   }
+   
+   .videoplayer{
+       margin-left:330px;
+       margin-top: 20px;
+       margin-bottom: 50px;
+      
+   }
+     .row{
+       text-align: center;
+       }
+   .statistics{
+     width: 60%;
+     padding: 5px;
+   }
+   .statistics_2{
+     width: 60%;
+     padding: 5px;
+   }
+   .chart-container {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+    margin-top: 50px; /* Space between video and charts */
+}
+.chart {
+    width: 45%; /* Adjust chart width for better alignment */
+    height: 400px;
+}
+   
+

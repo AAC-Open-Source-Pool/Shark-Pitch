@@ -6,6 +6,10 @@ class login(models.Model):
     email=models.EmailField(unique=True,max_length=225)
     password=models.CharField(max_length=32)
 
+class Signin(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.EmailField(unique=True,max_length=225)
+    password=models.CharField(max_length=32)
 
 class startup_register1(models.Model):
     SRNnumber = models.CharField(unique=True,max_length=9)
