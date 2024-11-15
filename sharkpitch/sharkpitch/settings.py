@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
     'mainapp',
 ]
 
@@ -80,9 +79,9 @@ WSGI_APPLICATION = 'sharkpitch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shark',      
+        'NAME': 'sharkpitch',      
         'USER': 'postgres',  
-        'PASSWORD': '1014',  
+        'PASSWORD': '1234',  
         'HOST': 'localhost'
     }
 }
