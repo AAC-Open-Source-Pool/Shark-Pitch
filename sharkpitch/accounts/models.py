@@ -16,7 +16,7 @@ class startup_register1(models.Model):
     Doc=models.ImageField(upload_to="media/images")
 
 class startup_register2(models.Model):
-    q1 = models.CharField(max_length=250)
+    q1 = models.CharField(max_length=250, null=True, blank=True)
     q2 = models.CharField(max_length=250)
     q3 = models.CharField(max_length=250)
     q4 = models.CharField(max_length=250)
