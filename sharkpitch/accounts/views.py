@@ -15,6 +15,9 @@ def signup_view(request):
         name = request.POST['name']
         email = request.POST['email']
         password = request.POST['password']
+        profession=request.POST['profession']
+        location=request.POST['location']
+        mobile_num=request.POST['mobile_num']
         user_type = request.POST.get('user_type')
 
         # Check if email already exists
@@ -26,7 +29,7 @@ def signup_view(request):
             
             # Create a new user account
             #new_user = Signin(name=name, email=email, password=hashed_password)
-            new_user = Signin(name=name, email=email, password=password)
+            new_user = Signin(name=name, email=email, password=password, mobile_num=mobile_num, profession=profession, location=location)
             new_user.save()
 
             if user_type == "investor" or user_type == "user":

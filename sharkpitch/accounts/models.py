@@ -11,6 +11,9 @@ class Signin(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField(unique=True,max_length=225)
     password=models.CharField(max_length=100)
+    profession=models.CharField(max_length=30)
+    location=models.CharField(max_length=50)
+    mobile_num=models.CharField(null=True,max_length=10)
 
     #def save(self, *args, **kwargs):
         # Hash the password before saving
