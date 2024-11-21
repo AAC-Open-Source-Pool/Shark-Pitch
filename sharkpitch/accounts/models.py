@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password
 
 # Create your models here.
 class login(models.Model):
@@ -9,7 +10,13 @@ class login(models.Model):
 class Signin(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField(unique=True,max_length=225)
-    password=models.CharField(max_length=32)
+    password=models.CharField(max_length=100)
+
+    #def save(self, *args, **kwargs):
+        # Hash the password before saving
+        #if self.pk is None:  # Only hash if it's a new instance
+            #self.password = make_password(self.password)
+        #super(Signin, self).save(*args, **kwargs)
 
 class startup_register1(models.Model):
     SRNnumber = models.CharField(unique=True,max_length=9)

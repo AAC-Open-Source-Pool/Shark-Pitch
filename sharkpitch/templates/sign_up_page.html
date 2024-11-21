@@ -25,9 +25,11 @@
     <div class="signup-container">
         <!-- Left Column with Form -->
         <div class="signup-form">
+           
             <h2>Sign up</h2>
             <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
-            <form method="post">
+            <form method="post" id="signup-form" action="{% url 'accounts:signup_view' %}">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name"><strong>Name:</strong></label>
                     <input type="text" id="name" name="name" required>
@@ -42,11 +44,11 @@
                     <label for="password"><strong>Password:</strong></label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                
+                <input type="hidden" id="role" name="role" value="Investor">
                 <p><strong>Sign up as:</strong></p>
-                <button type="button" class="role-button" onclick="window.location.href='{% url 'login' %}'">Investor</button>
-                <button type="button" class="role-button" onclick="window.location.href='{% url 'verification1' %}'">Entrepreneur</button>
-                <button type="button" class="role-button"onclick="window.location.href='{% url 'Investor_landing' %}'">User</button>
+                <button type="submit" class="role-button" name="user_type" value="investor" onclick="setRole('Investor'); window.location.href='{% url 'login' %}'">Investor</button>
+                <button type="submit" class="role-button"  name="user_type" value="startup" onclick="setRole('Entrepreneur'); window.location.href='{% url 'accounts:startup_register1_view' %}'">Entrepreneur</button>
+                <button type="submit" class="role-button"  name="user_type" value="user" onclick="setRole('User'); window.location.href='{% url 'Investor_landing' %}'">User</button>
             </form>
         </div>
         
@@ -55,5 +57,10 @@
             <img src="{% static 'images\sign_up.jpg' %}" alt="Signup Illustration">
         </div>
     </div>
+    <script>
+        function setRole(role) {
+            document.getElementById('role').value = role;
+        }
+    </script>
 </body>
 </html>

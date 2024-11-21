@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 
 urlpatterns=[
-    path('login/',views.login_view,name='login'),
+    path('login/',views.login_view,name='login_view'),
+    path('Investor_landing/',views.Investor_landing,name='Investor_landing'),
     path('verification1/',views.startup_register1_view,name='startup_register1_view'),
     path('verification2/',views.startup_register2_view,name='startup_register2_view'),
     path('verification3/',views.startup_register3_view,name='startup_register3_view'),
@@ -18,8 +19,10 @@ urlpatterns=[
     path('verification9/',views.startup_register9_view,name='startup_register9_view'),
     path('verification10/',views.startup_register10_view,name='startup_register10_view'),
     path('signup/',views.signup_view,name='signup_view'),
-     path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout, name='logout'),
 ]
+
+app_name='accounts'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

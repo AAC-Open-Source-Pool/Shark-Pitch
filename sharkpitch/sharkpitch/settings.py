@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k$6e1fajbi8c8lm#4u)7&hdogqj9)%fj=4agww79th)ydy&v*8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -82,7 +82,8 @@ DATABASES = {
         'NAME': 'shark',      
         'USER': 'postgres',  
         'PASSWORD': '1014',  
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'port':'5432',
     }
 }
 
@@ -103,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
 ]
 
 

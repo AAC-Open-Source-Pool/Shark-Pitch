@@ -33,12 +33,15 @@ margin-right: 10px;
 display: flex;
 font-weight: bolder;
 margin-left: 50px;
+cursor: pointer;
 }
 .nav{
     margin-left: 90px;
+    cursor: pointer;
 }
 .up1{
 margin-left: 300px;
+cursor: pointer;
 
 }
 .scrollup{

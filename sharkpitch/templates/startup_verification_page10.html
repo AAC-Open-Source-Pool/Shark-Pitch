@@ -18,7 +18,7 @@
             <a href="{% url 'home' %}" id="about">About Us</a>
             <a href="{% url 'home' %}" id="contact">Contact Us</a>
             <a href="{% url 'login' %}" id="logout">Login</a>
-            <img src="{% static 'images/profile.jpg" alt="Profile" id="prof">
+            <img src="{% static 'images/profile.jpg' %}" alt="Profile" id="prof">
         </nav>
     </header>
 
@@ -26,8 +26,10 @@
     <div class="upload-container">
         <p class="step"><strong>Step 3:</strong></p>
         <div class="upload-box">
+            <form method="post" action="{% url 'accounts:startup_register10_view' %}"  enctype="multipart/form-data">
+            {% csrf_token %}
             <p>Upload your introduction pitch video, product pictures and statistics</p>
-            <input method="post" type="file" id="upload" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple required>
+            <input  type="file" id="upload" name="video" placeholder="Upload your introduction pitch video, product pictures and statistics" multiple required>
             <div class="icon-container">
                 <img src="{% static 'images/upload_icon.png' %}" alt="Upload Icon" class="icon">
                 <img src="{% static 'images/video_icon.png' %}" alt="Video Icon" class="icon">
@@ -35,38 +37,8 @@
                 <img src="{% static 'images/stats_icon.png' %}" alt="Stats Icon" class="icon">
             </div>
         </div>
-
-        <button id="finishButton" onclick="window.location.href='{% url 'login' %}'" type="button">Finish</button>
+        <button id="finishButton" type="submit">Finish</button>
+        </form>
     </div>
-
-    <script>
-        document.getElementById('finishButton').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default button action
-
-            // Get the file input element
-            const uploadInput = document.getElementById('upload');
-
-            // Check if files were uploaded
-            if (uploadInput.files.length > 0) {
-                // Create an array to store the file names
-                let fileNames = [];
-
-                // Loop through all selected files
-                for (let i = 0; i < uploadInput.files.length; i++) {
-                    fileNames.push(uploadInput.files[i].name);
-                }
-
-                // Store the file names in local storage
-                localStorage.setItem('uploadedFiles', JSON.stringify(fileNames));
-            } else {
-                // If no file is uploaded, set an empty array
-                localStorage.setItem('uploadedFiles', JSON.stringify([]));
-            }
-
-            this.submit();
-            // Redirect to the next page (startup_verification_page1.html)
-            window.location.href = 'Investor_landing.html';
-        });
-    </script>
 </body>
 </html>

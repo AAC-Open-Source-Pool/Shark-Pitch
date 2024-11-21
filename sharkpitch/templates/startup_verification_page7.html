@@ -27,39 +27,22 @@
         <h2>Timing and Terms</h2>
 
         <!-- Questions -->
-        <form id="questionsForm" method="post">
+        <form id="questionsForm" method="post" action="{% url 'accounts:startup_register7_view' %}">
             {% csrf_token %}
             <div class="questions">
                 <div class="question">
                     <p>1. How much are you looking to raise and what are the terms?</p>
-                    <input type="text" id="fundingAmountTerms" placeholder="Investors want to know the funding requirements and the terms of the investment.">
+                    <input type="text" name="q1" id="fundingAmountTerms" placeholder="Investors want to know the funding requirements and the terms of the investment.">
                 </div>
                 <div class="question">
                     <p>2. What are the potential risks to the business?</p>
-                    <input type="text" id="businessRisks" placeholder="Describe any potential risks to the business.">
+                    <input type="text" name="q2" id="businessRisks" placeholder="Describe any potential risks to the business.">
                 </div>
                 
-                <button type="button" onclick="window.location.href='{% url 'verification8' %}'">Next</button>
+                <button type="submit" >Next</button>
             </div>
         </form>
     </div>
 
-    <script>
-        document.getElementById('questionsForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Get the input values
-            const fundingAmountTerms = document.getElementById('fundingAmountTerms').value;
-            const businessRisks = document.getElementById('businessRisks').value;
-
-            // Store the values in local storage
-            localStorage.setItem('fundingAmountTerms', fundingAmountTerms);
-            localStorage.setItem('businessRisks', businessRisks);
-
-            this.submit();
-            // Redirect to the next page
-            window.location.href = 'startup_verification_page8';
-        });
-    </script>
 </body>
 </html>

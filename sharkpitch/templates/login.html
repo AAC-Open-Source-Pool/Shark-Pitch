@@ -24,10 +24,11 @@
     <!-- Login Section -->
     <div class="login-container">
         <!-- Left Column with Form -->
-        <div class="login-form">
+        <div class="login-form">    
             <h2>Login</h2>
             <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
-            <form>
+            <form method="post" action="{% url 'accounts:login_view' %}">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name"><strong>Name:</strong></label>
                     <input type="text" id="name" name="name" required>
@@ -44,13 +45,13 @@
                 </div>
                 
                 <!-- Login Button -->
-                <button type="button" class="role-button" onclick="window.location.href='{% url 'Investor_landing' %}'">Login</button>
+                <button type="submit" class="role-button">Login</button>
             </form>
         </div>
         
         <!-- Right Column with Image -->
         <div class="login-image">
-            <img src="{% static 'images\sign_up.jpg' %}" alt="Login Illustration">
+            <img src="{% static 'images/sign_up.jpg' %}" alt="Login Illustration">
         </div>
     </div>
 </body>

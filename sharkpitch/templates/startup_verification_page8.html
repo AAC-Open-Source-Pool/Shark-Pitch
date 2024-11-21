@@ -27,43 +27,26 @@
         <h2>Miscellaneous</h2>
 
         <!-- Questions -->
-        <form id="questionsForm" method="post">
+        <form id="questionsForm" method="post" action="{% url 'accounts:startup_register8_view' %}">
+            {% csrf_token %}
             <div class="questions">
                 <div class="question">
                     <p>1. How did you come up with this idea?</p>
-                    <input type="text" id="problemSolved" placeholder="Investors want to know about the startup's origin and the founders' vision.">
+                    <input type="text" name="q1" id="problemSolved" placeholder="Investors want to know about the startup's origin and the founders' vision.">
                 </div>
                 <div class="question">
                     <p>2. What are your plans for scaling the business?</p>
-                    <input type="text" id="pointOfDifference" placeholder="Investors want to know about the startup's growth strategy and how it will achieve scalability.">
+                    <input type="text" name="q2" id="pointOfDifference" placeholder="Investors want to know about the startup's growth strategy and how it will achieve scalability.">
                 </div>
                 <div class="question">
                     <p>3. What are your key competitors and how do you differentiate yourself?</p>
-                    <input type="text" id="totalAddressableMarket" placeholder="Investors want to know about the competitive landscape and how the startup stands out.">
+                    <input type="text" name="q3" id="totalAddressableMarket" placeholder="Investors want to know about the competitive landscape and how the startup stands out.">
                 </div>
                 
-                <button type="button" onclick="window.location.href='{% url 'verification9' %}'">Next</button>
+                <button type="submit" >Next</button>
             </div>
         </form>
     </div>
 
-    <script>
-        document.getElementById('questionsForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Get the input values
-            const problemSolved = document.getElementById('problemSolved').value;
-            const pointOfDifference = document.getElementById('pointOfDifference').value;
-            const totalAddressableMarket = document.getElementById('totalAddressableMarket').value;
-
-            // Store the values in local storage
-            localStorage.setItem('problemSolved', problemSolved);
-            localStorage.setItem('pointOfDifference', pointOfDifference);
-            localStorage.setItem('totalAddressableMarket', totalAddressableMarket);
-
-            // Redirect to the next page (page4.html)
-            window.location.href = 'startup_verification_page9';
-        });
-    </script>
 </body>
 </html>

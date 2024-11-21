@@ -27,37 +27,23 @@
         <h2>Traction and Progress</h2>
 
         <!-- Questions -->
-        <form id="questionsForm" method="post">
+        <form id="questionsForm" method="post" action="{% url 'accounts:startup_register6_view' %}">
+            {% csrf_token %}
             <div class="questions">
                 <div class="question">
                     <p>1. What traction have you gained so far?</p>
-                    <input type="text" id="tractionGained" placeholder="Investors want to know about the startup's progress, such as user acquisition, revenue growth, or other key metrics.">
+                    <input type="text" name="q1" id="tractionGained" placeholder="Investors want to know about the startup's progress, such as user acquisition, revenue growth, or other key metrics.">
                 </div>
                 <div class="question">
                     <p>2. What are your key milestones and achievements?</p>
-                    <input type="text" id="keyMilestones" placeholder="Investors want to know about the startup's significant accomplishments and future goals.">
+                    <input type="text" name="q2" id="keyMilestones" placeholder="Investors want to know about the startup's significant accomplishments and future goals.">
                 </div>
                 
-                <button type="button" onclick="window.location.href='{% url 'verification7' %}'">Next</button>
+                <button type="submit" >Next</button>
             </div>
         </form>
     </div>
 
-    <script>
-        document.getElementById('questionsForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Get the input values
-            const tractionGained = document.getElementById('tractionGained').value;
-            const keyMilestones = document.getElementById('keyMilestones').value;
-
-            // Store the values in local storage
-            localStorage.setItem('tractionGained', tractionGained);
-            localStorage.setItem('keyMilestones', keyMilestones);
-
-            // Redirect to the next page
-            window.location.href = 'startup_verification_page7';
-        });
-    </script>
+    
 </body>
 </html>
