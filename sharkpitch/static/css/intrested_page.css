@@ -1,0 +1,111 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Options Container */
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.option-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.option-button {
+    background-color: #114E71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.option-button:hover {
+    background-color: #0d3b54;
+}
+
+/* Footer Styles */
+.footer {
+    flex-shrink: 0;
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .options-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .option {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .option-button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .option-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .option-button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
