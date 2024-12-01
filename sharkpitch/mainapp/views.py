@@ -42,3 +42,5 @@ def investor_description(request):
     return render(request,'investor_description_page.html')
 def startup_home(request):
     return render(request,'Startup_home.html')
+def jitsi_room(request, room_name):
+    return render(request, 'investor_description_page.html', {'room_name': room_name})

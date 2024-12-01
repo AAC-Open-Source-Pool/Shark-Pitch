@@ -14,32 +14,32 @@
     <div id="Main-profile-Container">
         <div id="avatar-card">
             <img src="{% static 'styles/images/profile.jpg' %}" alt="profile_photo" id="avatar">
-            <h2 id="name1">{user.name}</h2>
+            <h2 id="name1">{{user.name|default:"No Name Provided"}}</h2>
             <p id="title">Full-Time Investor</p>
-            <p id="loc">Hyd,India</p>
+            <p id="loc">{{user.location|default:"No Name Provided"}}</p>
         </div>
         <div id="details-card">
             <div id="a">
                 <table>
                 <tr>
                     <td><strong>Name :</strong></td>
-                    <td>Srinivas Reddy</td>
+                    <td>{{user.name|default:"No Name Provided"}}</td>
                 </tr>
                 <tr>
                     <td><strong>Mail ID : </strong></td>
-                    <td>srinivas@gmail.com</td>
+                    <td>{{user.email|default:"No Name Provided"}}</td>
                 </tr>
                 <tr>
-                    <td><strong>Company Name :</strong></td>
-                    <td>Shark Industries</td>
+                    <td><strong>Profession :</strong></td>
+                    <td>{{user.profession|default:"No Name Provided"}}</td>
                 </tr>
                 <tr>
                     <td><strong>Contact :</strong></td>
-                    <td>7036469121</td>
+                    <td>{{user.mobile|default:"No Name Provided"}}</td>
                 </tr>
                 <tr>
                     <td><strong>Location :</strong></td>
-                    <td>Hyd,India</td>
+                    <td>{{user.location|default:"No Name Provided"}}</td>
                 </tr>
                 </table>
             </div>

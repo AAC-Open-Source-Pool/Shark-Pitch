@@ -22,4 +22,5 @@ urlpatterns = [
     path('interested',views.interested,name='interested'),
     path('startup_info',views.startup_info,name='startup_info'),
     path('startup_home',views.startup_home,name='startup_home'),
+    path('jitsi/<str:room_name>/', views.jitsi_room, name='jitsi_room'),
 ]

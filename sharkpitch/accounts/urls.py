@@ -2,12 +2,14 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from .views import *
 
 
 urlpatterns=[
+    path('profile/', views.profile_view, name='profile_view'),
     path('login/',views.login_view,name='login_view'),
     path('Investor_landing/',views.Investor_landing,name='Investor_landing'),
+    path('startup/description/', views.startup_description_view, name='startup_description'),
     path('verification1/',views.startup_register1_view,name='startup_register1_view'),
     path('verification2/',views.startup_register2_view,name='startup_register2_view'),
     path('verification3/',views.startup_register3_view,name='startup_register3_view'),

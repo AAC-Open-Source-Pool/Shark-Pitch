@@ -14,31 +14,31 @@
     <div id="Main-profile-container">
         <div id="avatar-card">
             <img src="{% static 'styles/images/profile.jpg' %}" alt="profile photo" id="avatar">
-            <h2 id="name1">Sravan Reddy</h2>
-            <h3 id="loc">Hyd,India</h3>
+            <h2 id="name1">{{user.name}}</h2>
+            <h3 id="loc">{{user.location}}</h3>
         </div>
         <div id="details-card">
             <div id="a">
                 <table>
                 <tr>
                     <td><strong>Name :</strong></td>
-                    <td>Srinivas Reddy</td>
+                    <td>{{user.name}}</td>
                 </tr>
                 <tr>
                     <td><strong>Mail ID : </strong></td>
-                    <td>srinivas@gmail.com</td>
+                    <td>{{user.email}}</td>
                 </tr>
                 <tr>
                     <td><strong>Profession :</strong></td>
-                    <td>Employee at Shark Industries</td>
+                    <td>{{user.profession}}</td>
                 </tr>
                 <tr>
                     <td><strong>Contact :</strong></td>
-                    <td>7036469121</td>
+                    <td>{{user.mobile}}</td>
                 </tr>
                 <tr>
                     <td><strong>Location :</strong></td>
-                    <td>Hyd,India</td>
+                    <td>{{user.location}}</td>
                 </tr>
                 </table>
             </div>

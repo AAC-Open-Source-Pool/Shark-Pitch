@@ -1,3 +1,5 @@
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investor Description</title>
     <link rel="stylesheet" href="{% static 'css/investor_description_page.css' %}">
+    <script src="https://unpkg.com/@cometchat-pro/chat@latest/CometChat.js"></script>
+    <style>
+        #openChat {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        
+          #openChat:hover {
+            background-color: #0056b3;
+          }
+    </style>
 </head>
 
   <!-- Header Section -->
@@ -16,7 +33,7 @@
     <nav>
         <a href="{% url 'home' %}" id="about">About Us</a>
         <a href="{% url 'home' %}" id="contact">Contact Us</a>
-        <a href="{% url 'home' %}" id="logout">Logout</a>
+        <a href="{% url 'accounts:logout' %}" id="logout">Logout</a>
         <img src="{% static 'images/profile.jpg' %}" alt="" id="prof">
     </nav>
 </header>
@@ -67,13 +84,54 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Buttons -->
         <div class="button-container">
-            <button>Communicate with Investor</button>
+            <button  id="cometchat-btn" onclick="openCometChatPopup()">Communicate with Investor</button>
+            
             <button>Real-time Video Conference</button>
         </div>
     </div>
-   
+    
 </body>
+<script>
+    const appID = "267727497461a0e1";
+    const region = "IN";
+    const authKey = "0ac2aea0a9c16bcded63bb07ab7428dfeb3ca661"; // Needed for logging in users
+    
+    // Initialize CometChat
+    CometChat.init(appID, new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(region).build())
+      .then(() => {
+        console.log("CometChat initialized successfully");
+      })
+      .catch(error => {
+        console.error("CometChat initialization failed:", error);
+      });
+  
+  
+    // Open CometChat widget or window
+    function openCometChatPopup() {
+        // Example: login the user first if not already logged in
+        const userUID = "USER_UID";  // Replace with the actual user ID
+    
+        CometChat.login(userUID, authKey)
+          .then(user => {
+            console.log("User logged in successfully:", user);
+            
+            // Launch the CometChat pop-up widget
+            CometChatWidget.launch({
+              widgetID: "f9bd6f3b-2455-42c8-878a-238c4c1e1246",  // Replace with your CometChat widget ID
+              docked: false,               // Pop-up window mode
+              alignment: "right",          // "left" or "right"
+              roundedCorners: true,        // Rounded corners for the pop-up window
+              height: "500px",             // Height of the pop-up window
+              width: "400px",              // Width of the pop-up window
+            });
+          })
+          .catch(error => {
+            console.error("Error logging in:", error);
+          });
+      }
+  </script>
 </html>
+{% endblock %}

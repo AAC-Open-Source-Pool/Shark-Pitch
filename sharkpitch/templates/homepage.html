@@ -373,9 +373,9 @@
     </div>
     
     <div class="scrollup">
-        <h2 id="startup" style="font-weight: bolder;">Start Ups</h2>
-        <h2 id="investors" style="font-weight: bolder;">Investors</h2>
-        <h2 id="heroes" style="font-weight: bolder;">Our Heroes</h2>
+        <h2 id="startup" style="font-weight: bolder;" onclick="scrollToStartup()">Start Ups</h2>
+        <h2 id="investors" style="font-weight: bolder;" onclick="scrollToInvestor()">Investors</h2>
+        <h2 id="heroes" style="font-weight: bolder;"  onclick="scrollToHeros()">Our Heroes</h2>
     </div>
     
     <p class="quote"> 
@@ -415,7 +415,7 @@
             <div class="container swiper">
                 <div class="card-wrapper">
                     <ul class="card-list swiper-wrapper">
-                        <li class="card-item swiper-slide">
+                        <li class="card-item swiper-slide"  id="startup">
                             <a href="#" class="card-link">
                                 <img src="{% static 'styles/images/carousel2.png' %}" alt="card-image" class="card-image">
                                 <p class="badge">know more</p>
@@ -448,7 +448,7 @@
         </div>
         
         <div class="investorcard">
-            <h2 class="cardinvestors">
+            <h2 class="cardinvestors" id="investor">
                 Investors
             </h2>
             <div class="cards-container">
@@ -475,7 +475,7 @@
         
         <div class="page4">
             <div class="box">
-                <h2 class="heading2" style="align-items: center;">
+                <h2 class="heading2" style="align-items: center;" id="ourheros">
                     Our Heroes
                 </h2>
                 <div class="ourheroescards">
@@ -559,6 +559,15 @@
                 }
                 function scrollToContact() {
                     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+                }
+                function scrollToInvestor(){
+                    document.getElementById("investor").scrollIntoView({ behavior: "smooth" });
+                }
+                function scrollToHeros(){
+                    document.getElementById("ourheros").scrollIntoView({ behavior: "smooth" });
+                }
+                function scrollToStartup(){
+                    document.getElementById("startup").scrollIntoView({ behavior: "smooth" });
                 }
             </script>
             </body>

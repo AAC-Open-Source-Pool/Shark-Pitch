@@ -62,7 +62,8 @@ nav a {
 #prof {
     width: 50px;
     height: 50px;
-    border-radius: 30pxs;
+    border-radius: 30px;
+    margin-right: 10px;
 }
 .header_profile {
     width: 50px;
@@ -72,7 +73,7 @@ nav a {
     
 
 .profile-container {
-    width: 80%;
+    width: 70%;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
@@ -94,6 +95,7 @@ nav a {
     padding: 20px;
     border-radius: 8px;
     border: 2px solid #cfe2ff;
+    margin-left: 20px;
 }
 
 .profile-info {
@@ -104,8 +106,8 @@ nav a {
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
@@ -141,7 +143,6 @@ table td {
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
 }
-
 
 .button-container {
     display: flex;
@@ -209,10 +210,10 @@ button:hover {
             <!-- Left Box with Profile Info -->
             <div class="profile-info-box">
                 <div class="profile-info">
-                    <img src="{% static 'css/images/prof.png' %}" alt=" " class="prof">
-                    <h2>ch.vaishnavy</h2>
+                    <img src="{% static 'styles/images/profile.jpg' %}"  alt=" " class="avatar">
+                    <h2>{{user.name}}</h2>
                     <p class="title">Full-Time Investor</p>
-                    <p>Hyd, India</p>
+                    <p>{{user.location}}</p>
                 </div>
             </div>
 
@@ -223,29 +224,29 @@ button:hover {
                     <table>
                         <tr>
                             <td><strong>Name</strong></td>
-                            <td>ch.vaishnavy</td>
+                            <td>{{user.name}}</td>
                         </tr>
                         <tr>
                             <td><strong>Founders Name</strong></td>
-                            <td>Chairman of Stark Industries, Investor</td>
+                            <td>{{user.name}}</td>
                         </tr>
                         <tr>
                             <td><strong>E-mail</strong></td>
-                            <td>vyshuchepuri@gmail.com</td>
+                            <td>{{user.email}}</td>
                         </tr>
                         <tr>
                             <td><strong>Contact no.</strong></td>
-                            <td>7337533325</td>
+                            <td>{{user.mobile}}</td>
                         </tr>
                         <tr>
                             <td><strong>Location</strong></td>
-                            <td>Hyd, India</td>
+                            <td>{{user.location}}</td>
                         </tr>
                         <tr>
                             <td><strong>SRN or CIN or GST Number</strong></td>
-                            <td>236484864747</td>
+                            <td>{{startup_data.SRNnumber}}</td>
                         </tr>
-                        <a href="#" class="edit-profile">+Edit Profile</a>
+                       <!-- <a href="#" class="edit-profile">+Edit Profile</a> -->
                     </table>
                 </div>
             </div>

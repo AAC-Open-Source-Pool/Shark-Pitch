@@ -29,8 +29,8 @@
     </div>
         <a href="{% url 'home' %}" id="about">About Us</a>
         <a href="{% url 'home' %}" id="contact">Contact Us</a>
-        <a href="{% url 'home' %}" id="logout">Logout</a>
-        <img src="{% static 'styles/images/profile.jpg' %}" alt="" id="prof">
+        <a href="{% url 'accounts:logout' %}" id="logout">Logout</a>
+        <a href="{% url 'accounts:profile_view' %}"><img src="{% static 'styles/images/profile.jpg' %}" alt="" id="prof"></a>
     </header>
     <div id="domains">
         <h2 id="dom">DOMAINS :</h2>
