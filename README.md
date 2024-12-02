@@ -96,7 +96,9 @@ http://localhost:8000
 ## Preview
 Screenshot of the project:
 
-https://ibb.co/s2w17xH
+<div align = 'center'> 
+   <img src = "https://i.imgur.com/5XxOclD_d.webp?maxwidth=1520&fidelity=grand">
+</div>
 
 --
 
