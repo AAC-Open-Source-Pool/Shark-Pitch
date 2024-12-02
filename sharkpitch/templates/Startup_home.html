@@ -77,19 +77,15 @@
 <body>
   
  
-<p class="startup-name">Zepto</p>
-<p class="profile">Profile</p>
+<p class="startup-name">{{details.Company_Name}}</p>
+<p class="profile">We as <strong>"{{details.Company_Name}}"</strong></p>
 <div style="display: flex; flex-direction:column;">
  
   <div class="startupinfo-profile">
     
     <div style="display:flex;">
       
-        <p class="about"> <strong> Aadit Palicha</strong> and <strong>Kaivalya Vohra</strong>: Perfecting the 
-      quick commerce playbook. <br>
-      The co-founders of Zepto just wanted
-      to solve a big problem during the pandemic. <br>
-      The solution has become one of the fastest-growing internet companies in India</p>
+        <p class="about"> <strong> Founder</strong>,<strong>{{details.Founder_Name}}</strong>: {{details.q1}}</p>
     </div> 
     <div style="width:400px;" ><img  class="profile-pic"  src="{% static 'images\founders.jpg' %}" ></div>
     <!--sharkpitch\static\images\founders.jpg-->
@@ -97,13 +93,11 @@
   <div>
       <div>
       <p class="About">About</p>
-      <p class="info">Headquartered in Mumbai, Zepto is present across 10 major cities in the country, 1000+ employees strong,
-      and delivers 3000+ products, including fresh fruits and vegetables, daily cooking essentials, dairy, 
-      health-and-hygiene products, etc., to Indian homes within 10 minutes.</p>
+      <p class="info">{{details.q2}} <br>{{details.q3}} <br> {{details.q4}}</p>
       </div>
       <div>
       <video class ="videoplayer" width="500" height="300" controls>
-          <source src="{% static 'styles/videos/pitch1.mp4' %}" type="video/mp4">
+          <source src="{{details.Video_URL}}" type="video/mp4">
               </video>
       </div>
       </div>

@@ -30,6 +30,9 @@
             {% csrf_token %}
             <p><strong>Step 1:</strong></p>
             <!-- Adding name attributes for Django to capture data -->
+            <input type="text" id="companyName" name="companyName" placeholder="Enter the name of your Company/Startup" required>
+            <input type="text" id="founderName" name="founderName" placeholder="Name of the Founder" required>
+
             <input type="text" name="SRNnumber" id="srnNumber" placeholder="Enter your SRN or CIN or GST number" required>
             <input type="file" name="Doc" id="upload" placeholder="Upload your documents here" required>
             

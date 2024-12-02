@@ -51,6 +51,8 @@ class Signin(AbstractBaseUser, PermissionsMixin,models.Model):
 
 class startup_register1(models.Model):
     user = models.ForeignKey(Signin, on_delete=models.CASCADE, related_name='register1')
+    Company_Name = models.CharField(max_length=50,null=True,blank=True,default="null")
+    Founder_Name = models.CharField(max_length=100,null=True,blank=True,default="null")
     SRNnumber = models.CharField(unique=True,max_length=9)
     Doc=models.ImageField(upload_to="media/images")
 
@@ -74,8 +76,8 @@ class startup_register3(models.Model):
 
 class startup_register4(models.Model):
     user = models.ForeignKey(Signin, on_delete=models.CASCADE, related_name='register4')
-    q1 = models.CharField(max_length=250)
-    q2 = models.CharField(max_length=250)
+    q1 = models.CharField(max_length=500)
+    q2 = models.CharField(max_length=500)
 
 class startup_register5(models.Model):
     user = models.ForeignKey(Signin, on_delete=models.CASCADE, related_name='register5')

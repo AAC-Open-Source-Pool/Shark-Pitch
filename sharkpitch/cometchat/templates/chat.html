@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twilio Chat</title>
+</head>
+<script src="https://sdk.twilio.com/js/conversations/v1.0/twilio-conversations.min.js"></script>
+<body>
+    <div id="chat">
+        <button>chat</button>
+    </div>
+    <script src="https://sdk.twilio.com/js/chat/v5.2/twilio-chat.min.js"></script>
+    <script>
+        async function joinChat(identity) {
+            const response = await fetch(/chat/get-chat-token/?identity=${identity});
+            const data = await response.json();
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+        
+            const client = new Twilio.Conversations.Client(data.token);
+        
+            client.on('conversationAdded', (conversation) => {
+                console.log('Joined conversation:', conversation);
+            });
+        
+            const conversation = await client.getConversationBySid('IS6b79cbaf8e9647dcae06d779dc9caf82');
+            conversation.sendMessage('Hello from Django and Twilio!');
+        }
+        /*async function initChat() {
+            const response = await fetch('/chat/get_token/?identity=User1');
+            const data = await response.json();
+
+            const chatClient = await Twilio.Chat.Client.create(data.token);
+            chatClient.on('channelAdded', channel => console.log('Channel added:', channel));
+            chatClient.on('messageAdded', message => console.log('Message:', message.body));
+        }
+        initChat();*/
+    </script>
+</body>
+</html>

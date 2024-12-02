@@ -177,6 +177,10 @@ header{
     #us{
         margin-left: 50px;
     }
+    #us:hover{
+        color: #3ca0e7;
+        cursor: pointer;
+    }
 
 
     /*resposiveness with query*/

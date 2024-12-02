@@ -9,7 +9,7 @@ urlpatterns=[
     path('profile/', views.profile_view, name='profile_view'),
     path('login/',views.login_view,name='login_view'),
     path('Investor_landing/',views.Investor_landing,name='Investor_landing'),
-    path('startup/description/', views.startup_description_view, name='startup_description'),
+    path('startup/<int:user_id>/', views.startup_home_view, name='startup_home'),
     path('verification1/',views.startup_register1_view,name='startup_register1_view'),
     path('verification2/',views.startup_register2_view,name='startup_register2_view'),
     path('verification3/',views.startup_register3_view,name='startup_register3_view'),
@@ -22,7 +22,7 @@ urlpatterns=[
     path('verification10/',views.startup_register10_view,name='startup_register10_view'),
     path('signup/',views.signup_view,name='signup_view'),
     path('logout/', views.logout, name='logout'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 app_name='accounts'
 

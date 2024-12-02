@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import messages
 from .models import *
 from django.contrib.auth.decorators import login_required
@@ -66,7 +66,7 @@ def login_view(request):
             if user.password == password:  # Compare plain text passwords
                 print("Password matches")
                 # Set session variables
-                Login(request, user)  # Log the user in
+                Login(request, user,backend='django.contrib.auth.backends.ModelBackend')  # Log the user in
                 print("User logged in successfully.")
                 
                 # Save or update login details (if you need to keep track of logins)
@@ -86,7 +86,7 @@ def login_view(request):
                 
                 # Redirect to landing page
                 messages.success(request, "Login successful.")
-                return redirect('Investor_landing')
+                return redirect('accounts:Investor_landing')
             else:
                 messages.error(request, "Invalid password.")  # Handle incorrect password
         except Signin.DoesNotExist:
@@ -133,50 +133,74 @@ def profile_view(request):
 
 @login_required
 def Investor_landing(request):
-    return render(request,'Investor_landing.html')
+    print("hey1")
+    videos = startup_register10.objects.all()
+    video_data = []
+
+    for video in videos:
+        print("hey2")
+        try:
+            # Get founder data (single query for Founder_Name and Company_Name)
+            founder_data = startup_register1.objects.filter(user=video.user).first()
+            if founder_data:
+                print("entered")
+                Founder_Name = founder_data.Founder_Name
+                Company_Name = founder_data.Company_Name
+            else:
+                Founder_Name = "Unknown"
+                Company_Name = "Unknown"
+            # Get tag data
+            tag_data = startup_register7.objects.filter(user=video.user).first()
+            tag = tag_data.tag if tag_data else "other"
+
+        except Exception as e:
+            print(f"Error fetching data for user {video.user}: {e}")
+            Founder_Name = "Unknown"
+            Company_Name = "Unknown"
+            tag = "other"
+        # Append video data
+        video_data.append({
+            'video_url': video.video.url,
+            'Founder_Name': founder_data.Founder_Name,
+            'Company_Name': founder_data.Company_Name,
+            'user_id':founder_data.user_id,
+            'tag': tag
+        })
+        print(video_data)
+
+    # Render the page with video data
+    return render(request, 'Investor_landing.html', {'video_data': video_data})
 
 #startup description page view
-def startup_description_view(request):
+def startup_home_view(request,user_id):
     print("Loading startup description page")
 
     # Ensure user is authenticated
     if not request.user.is_authenticated:
         return redirect('login')
-
-    # Get the currently logged-in user
-    user = request.user._wrapped  # Assuming you're using a custom user model wrapped in `request.user`
-
-    # Initialize all registration data as None
-    startup_data = {
-        'register1': None,
-        'register2': None,
-        'register3': None,
-        'register4': None,
-        'register5': None,
-        'register6': None,
-        'register7': None,
-        'register8': None,
-        'register9': None
+    startup = get_object_or_404(startup_register1, user_id=user_id)
+    info10 = startup_register10.objects.filter(user=startup.user).first()
+    info8 = startup_register8.objects.filter(user=startup.user).first()
+    info7 = startup_register7.objects.filter(user=startup.user).first()
+    info6 = startup_register6.objects.filter(user=startup.user).first()
+    info5 = startup_register5.objects.filter(user=startup.user).first()
+    info4 = startup_register4.objects.filter(user=startup.user).first()
+    info3 = startup_register3.objects.filter(user=startup.user).first()
+    info2 = startup_register2.objects.filter(user=startup.user).first()
+    # Consolidate all the details into a dictionary
+    details = {
+        'Founder_Name': startup.Founder_Name,
+        'Company_Name': startup.Company_Name,
+        'q1':info3.q1,
+        'q2':info4.q1,
+        'q3':info6.q2,
+        'q4':info5.q1,
+        'Video_URL': info10.video.url if info10 else None,
+        # Add other fields as needed
     }
-
-    # Fetch all related registration data for startup
-    if user.user_type == 'startup':
-        # Fetch the data from all 9 registration tables using .filter(user=user).first()
-        startup_data['register1'] = startup_register1.objects.filter(user=user).first()
-        startup_data['register2'] = startup_register2.objects.filter(user=user).first()
-        startup_data['register3'] = startup_register3.objects.filter(user=user).first()
-        startup_data['register4'] = startup_register4.objects.filter(user=user).first()
-        startup_data['register5'] = startup_register5.objects.filter(user=user).first()
-        startup_data['register6'] = startup_register6.objects.filter(user=user).first()
-        startup_data['register7'] = startup_register7.objects.filter(user=user).first()
-        startup_data['register8'] = startup_register8.objects.filter(user=user).first()
-        startup_data['register9'] = startup_register9.objects.filter(user=user).first()
-
-        # Pass the data to the template for rendering
-        return render(request, 'Startup_description.html', {
-            'user': user,
-            'startup_data': startup_data,
-        })
+    print(details)
+    return render(request, 'Startup_home.html', {'details': details})
+    
 
 # Startup Registration Step 1
 
@@ -185,12 +209,17 @@ def startup_register1_view(request):
     if request.method == 'POST':
         SRNnumber = request.POST.get('SRNnumber')
         Doc = request.FILES.get('Doc')
-        #print("gotin1")
+        Company_Name=request.POST.get('companyName')
+        Founder_Name=request.POST.get('founderName')
+        print(Company_Name)
+        print(Founder_Name)
         if request.user.is_authenticated and request.user.user_type == 'startup':
+            print("gotin3")
             if SRNnumber and Doc:
-                startup_register1.objects.create(SRNnumber=SRNnumber, Doc=Doc,user=request.user)
+                print('got in 4')
+                startup_register1.objects.create(SRNnumber=SRNnumber, Doc=Doc,Company_Name=Company_Name,Founder_Name=Founder_Name,user=request.user)
                 messages.success(request, 'Registration Step 1 completed.')
-                #print("gotin2")
+                print("gotin2")
                 return redirect('accounts:startup_register2_view')  # Redirect to the next registration step
             else:
                 messages.error(request, 'Please fill out all fields.')
@@ -321,7 +350,7 @@ def startup_register10_view(request):
             print("gotin1")
             startup_register10.objects.create(video=video,user=request.user)
             messages.success(request, 'Video uploaded successfully!')
-            return redirect('Investor_landing') 
+            return redirect('accounts:Investor_landing') 
         else:
             messages.error(request, 'Please upload a video.')
     return render(request, 'startup_verification_page10.html')

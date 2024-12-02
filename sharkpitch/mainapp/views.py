@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 def home(request):
     return render(request,'homepage.html')
 def Investor_landing(request):
-    return render(request,'investor_landing.html')
+    return render(request,'Investor_landing.html')
 def Investor_profile(request):
     return render(request,'investor_profile.html')
 def User_profile(request):
@@ -42,5 +42,5 @@ def investor_description(request):
     return render(request,'investor_description_page.html')
 def startup_home(request):
     return render(request,'Startup_home.html')
-def jitsi_room(request, room_name):
-    return render(request, 'investor_description_page.html', {'room_name': room_name})
+def index(request):
+    return render(request, 'mainapp/Interested_page.html')  # Template with button

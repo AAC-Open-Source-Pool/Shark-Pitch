@@ -65,7 +65,7 @@
                 <p><strong>Sign up as:</strong></p>
                 <button type="submit" class="role-button" name="user_type" value="investor" onclick="setRole('Investor'); window.location.href='{% url 'login' %}'">Investor</button>
                 <button type="submit" class="role-button"  name="user_type" value="startup" onclick="setRole('Entrepreneur'); window.location.href='{% url 'accounts:startup_register1_view' %}'">Entrepreneur</button>
-                <button type="submit" class="role-button"  name="user_type" value="user" onclick="setRole('User'); window.location.href='{% url 'Investor_landing' %}'">User</button>
+                <button type="submit" class="role-button"  name="user_type" value="user" onclick="setRole('User'); window.location.href='{% url 'accounts:Investor_landing' %}'">User</button>
             </form>
         </div>
         
