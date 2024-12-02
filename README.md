@@ -56,40 +56,51 @@ This platform aims to empower startups by connecting them with the resources and
 To use this project, follow these steps:  
 
 1. **Clone the repository**:  
-   ```bash  
+```bash  
    git clone <repository_url>  
-   cd shark-pitch  
+   cd shark-pitch
+```
 
 2.  **Set up a virtual environment**:
 
+``` terminal
 python -m venv env  
 source env/bin/activate  # On Windows: env\Scripts\activate
+```
 
 3. **Install dependencies**:
 
+``` terminal
 pip install -r requirements.txt
+```
 
 4. **Set up environment variables**:
 
+``` terminal
  --Create a .env file in the root directory and add:
 SECRET_KEY=your_django_secret_key  
-DATABASE_URL=postgresql://username:password@localhost:5432/shark_pitch  
+DATABASE_URL=postgresql://username:password@localhost:5432/shark_pitch
+```
 
 
 5. **Run database migrations**:
 
+```terminal
 python manage.py migrate
+```
 
 
 6. **Start the development server**:
 
-python manage.py runserver  
+``` terminal
+python manage.py runserver
+``` 
 
 
 7. **Access the application**:
 Open your browser and navigate to:
 
-http://localhost:8000  
+<a href = "http://localhost:8000">http://localhost:8000</a>  
 
 --
 
