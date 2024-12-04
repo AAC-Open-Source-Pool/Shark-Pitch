@@ -1,15 +1,9 @@
 /* General Styles */
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 /* Header Styles */
@@ -17,163 +11,129 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #6c8d9e;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #789FAF;
+    padding: 15px 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 10px;
 }
 
 #logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
 #shark {
     color: white;
-    font-size: 1.5rem;
     font-weight: bold;
+    font-size: 24px;
     text-decoration: none;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 30px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: opacity 0.2s;
-}
-
-nav a:hover {
-    opacity: 0.8;
+    font-size: 16px;
 }
 
 #prof {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
-/* Main Content Styles */
+/* Verify Container Styles */
 .verify-container {
     max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: white;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.verify-container h1 {
+.verify-container h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 30px;
+    font-size: 24px;
 }
 
-.verify-form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.form-section {
+    margin-bottom: 30px;
+    text-align: left;
 }
 
-.step {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.step-label {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.step h2 {
-    color: #333;
-    font-size: 1.2rem;
+.optional-note {
+    color: #666;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
+/* Form Input Styles */
 input[type="text"] {
     width: 100%;
-    padding: 0.8rem;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.file-upload {
-    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 input[type="file"] {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
+    padding: 8px 0;
+    margin-bottom: 15px;
 }
 
-.optional-note {
-    font-style: italic;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.start-button {
-    background-color: #114E71;
+button {
+    background-color: #0F4C75;
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 12px 30px;
+    font-size: 16px;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s;
-    width: fit-content;
+    display: block;
     margin: 0 auto;
+    transition: background-color 0.3s ease;
 }
 
-.start-button:hover {
+button:hover {
     background-color: #0d3b54;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
     header {
-        padding: 1rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 15px 20px;
     }
 
     .verify-container {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
+        margin: 20px;
+        padding: 20px;
     }
 
-    .verify-container h1 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    nav a {
-        font-size: 0.9rem;
-    }
-
-    .start-button {
-        width: 100%;
-        text-align: center;
+    nav {
+        gap: 15px;
     }
 }

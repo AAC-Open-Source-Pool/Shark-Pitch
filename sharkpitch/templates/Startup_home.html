@@ -93,12 +93,13 @@
   <div>
       <div>
       <p class="About">About</p>
-      <p class="info">{{details.q2}} <br>{{details.q3}} <br> {{details.q4}}</p>
+      <p class="info">{{details.q2}}{{details.q3}} <br>{{details.q4}}{{details.q5}}</p>
+      <p class="info"> <strong>Feel free to Contact us:</strong> {{details.mail}}</p>
       </div>
       <div>
-      <video class ="videoplayer" width="500" height="300" controls>
-          <source src="{{details.Video_URL}}" type="video/mp4">
-              </video>
+      <!--<video class ="videoplayer" width="500" height="300" src="{{ details.Video_URL|slice:':/media/' }}" controls>
+          <source src="..{{details.video_url}}" type="video/mp4">
+              </video> -->
       </div>
       </div>
      

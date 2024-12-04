@@ -353,29 +353,41 @@
     
     <div class="navbar">
         <img src="{% static 'styles/images/sharkpitchlogo.jpg' %}" id="sharkpitchlogo" alt="Shark Pitch Logo">
-        <h1 class="heading1" style="margin-right:1100px ;">
+        <h1 class="heading1" style="margin-right:1100px ; color:#114E71">
             SHARK PITCH
         </h1>
         <div class="nav" style="margin-bottom:-50px; margin-left:350px;margin-top:-110px;">
-            <h2 class="up1"  style="font-weight: bold; cursor:pointer;" onclick="scrollToAbout()">
+            <h2 class="up1"  style="font-weight: bold; cursor:pointer;" onclick="scrollToAbout()" 
+                onclick="window.location.href='{% url 'home' %}'" 
+                onmouseover="this.style.color= '#114e71'; " 
+                onmouseout="this.style.color='white';">
                 About Us
             </h2>
-            <h2 class="up2" style="font-weight: bold;  cursor:pointer;" onclick="scrollToContact()">
+            <h2 class="up2" style="font-weight: bold;  cursor:pointer;" onclick="scrollToContact()"
+                onclick="window.location.href='{% url 'home' %}'" 
+                onmouseover="this.style.color= '#114e71'; " 
+                onmouseout="this.style.color='white';">
                 Contact Us
             </h2>
-            <h2 class="up2" style="font-weight: bold;  cursor:pointer;" onclick="window.location.href='{% url 'login' %}'">
+            <h2 class="up2" style="font-weight: bold;  cursor:pointer;" onclick="window.location.href='{% url 'login' %}'"
+                onclick="window.location.href='{% url 'home' %}'" 
+                onmouseover="this.style.color= '#114e71'; " 
+                onmouseout="this.style.color='white';">
                 LogIn
             </h2>
-            <h2 class="up3" style="font-weight: bold; cursor:pointer;" onclick="window.location.href='{% url 'signup' %}'">
+            <h2 class="up3" style="font-weight: bold; cursor:pointer;" onclick="window.location.href='{% url 'signup' %}'"
+                onclick="window.location.href='{% url 'home' %}'" 
+                onmouseover="this.style.color= '#114e71'; " 
+                onmouseout="this.style.color='white';">
                 Register
             </h2>
         </div>
     </div>
     
     <div class="scrollup">
-        <h2 id="startup" style="font-weight: bolder;" onclick="scrollToStartup()">Start Ups</h2>
-        <h2 id="investors" style="font-weight: bolder;" onclick="scrollToInvestor()">Investors</h2>
-        <h2 id="heroes" style="font-weight: bolder;"  onclick="scrollToHeros()">Our Heroes</h2>
+        <h2 id="startup" style="font-weight: bolder; cursor:pointer;" onclick="scrollToStartup()">Start Ups</h2>
+        <h2 id="investors" style="font-weight: bolder; cursor:pointer;" onclick="scrollToInvestor()">Investors</h2>
+        <h2 id="heroes" style="font-weight: bolder; cursor:pointer;"  onclick="scrollToHeros()">Our Heroes</h2>
     </div>
     
     <p class="quote"> 

@@ -5,9 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import logout as Logout,authenticate,login as Login
 from django.contrib.auth.hashers import make_password, check_password
-
+from django.conf import settings
 # Create your views here.
-
 
 #signUp
 
@@ -26,11 +25,6 @@ def signup_view(request):
         if Signin.objects.filter(email=email).exists():
             messages.error(request, "Email already exists")
         else:
-            # Hash the password before saving it
-            #hashed_password = make_password(password)
-            
-            # Create a new user account
-            #new_user = Signin(name=name, email=email, password=hashed_password)
             new_user = Signin(name=name, email=email, password=password, mobile=mobile, profession=profession, location=location,user_type=user_type)
             new_user.save()
 
@@ -150,8 +144,8 @@ def Investor_landing(request):
                 Founder_Name = "Unknown"
                 Company_Name = "Unknown"
             # Get tag data
-            tag_data = startup_register7.objects.filter(user=video.user).first()
-            tag = tag_data.tag if tag_data else "other"
+            tag_data = startup_register5.objects.filter(user=video.user).first()
+            tag = tag_data.q2 if tag_data else "other"
 
         except Exception as e:
             print(f"Error fetching data for user {video.user}: {e}")
@@ -179,6 +173,7 @@ def startup_home_view(request,user_id):
     if not request.user.is_authenticated:
         return redirect('login')
     startup = get_object_or_404(startup_register1, user_id=user_id)
+    info1 = Signin.objects.filter(id=user_id).first()
     info10 = startup_register10.objects.filter(user=startup.user).first()
     info8 = startup_register8.objects.filter(user=startup.user).first()
     info7 = startup_register7.objects.filter(user=startup.user).first()
@@ -194,8 +189,45 @@ def startup_home_view(request,user_id):
         'q1':info3.q1,
         'q2':info4.q1,
         'q3':info6.q2,
-        'q4':info5.q1,
-        'Video_URL': info10.video.url if info10 else None,
+        'q4':info6.q1,
+        'q5':info8.q1,
+        'mail':info1.email,
+        #'Video_URL': info10.video.url if info10 else None,
+        'Video_URL':'media/media/videos/pitch5.mp4',
+        # Add other fields as needed
+    }
+    print(details)
+    return render(request, 'Startup_home.html', {'details': details})
+    
+
+def startup_landing(request):
+    print("Loading startup description page")
+    user = request.user._wrapped
+    # Ensure user is authenticated
+    if not request.user.is_authenticated:
+        return redirect('login')
+    startup = get_object_or_404(startup_register1, )
+    info1 = Signin.objects.filter(user=user).first()
+    info10 = startup_register10.objects.filter(user=user).first()
+    info8 = startup_register8.objects.filter(user=user).first()
+    info7 = startup_register7.objects.filter(user=user).first()
+    info6 = startup_register6.objects.filter(user=user).first()
+    info5 = startup_register5.objects.filter(user=user).first()
+    info4 = startup_register4.objects.filter(user=user).first()
+    info3 = startup_register3.objects.filter(user=user).first()
+    info2 = startup_register2.objects.filter(user=user).first()
+    # Consolidate all the details into a dictionary
+    details = {
+        'Founder_Name': startup.Founder_Name,
+        'Company_Name': startup.Company_Name,
+        'q1':info3.q1,
+        'q2':info4.q1,
+        'q3':info6.q2,
+        'q4':info6.q1,
+        'q5':info8.q1,
+        'mail':info1.email,
+        #'Video_URL': info10.video.url if info10 else None,
+        'Video_URL':'media/media/videos/pitch5.mp4',
         # Add other fields as needed
     }
     print(details)
