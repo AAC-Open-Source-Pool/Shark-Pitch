@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("mainapp.urls")),
     path('accounts/',include("accounts.urls")),
-    path('cometchat/', include('cometchat.urls')),
 ]

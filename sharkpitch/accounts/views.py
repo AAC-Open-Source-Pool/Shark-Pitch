@@ -7,7 +7,6 @@ from django.contrib.auth import logout as Logout,authenticate,login as Login
 from django.contrib.auth.hashers import make_password, check_password
 from django.conf import settings
 # Create your views here.
-
 #signUp
 
 def signup_view(request):
@@ -80,7 +79,11 @@ def login_view(request):
                 
                 # Redirect to landing page
                 messages.success(request, "Login successful.")
-                return redirect('accounts:Investor_landing')
+                #return redirect('accounts:Investor_landing')
+                if(user.user_type=='startup'):
+                    return redirect('accounts:startup_landing')
+                else:
+                    return redirect('accounts:Investor_landing')
             else:
                 messages.error(request, "Invalid password.")  # Handle incorrect password
         except Signin.DoesNotExist:
@@ -202,12 +205,12 @@ def startup_home_view(request,user_id):
 
 def startup_landing(request):
     print("Loading startup description page")
-    user = request.user._wrapped
+    user = request.user
+    print(user)
     # Ensure user is authenticated
     if not request.user.is_authenticated:
         return redirect('login')
-    startup = get_object_or_404(startup_register1, )
-    info1 = Signin.objects.filter(user=user).first()
+    startup = startup_register1.objects.filter(user=user).first()
     info10 = startup_register10.objects.filter(user=user).first()
     info8 = startup_register8.objects.filter(user=user).first()
     info7 = startup_register7.objects.filter(user=user).first()
@@ -225,7 +228,7 @@ def startup_landing(request):
         'q3':info6.q2,
         'q4':info6.q1,
         'q5':info8.q1,
-        'mail':info1.email,
+        'mail':user.email,
         #'Video_URL': info10.video.url if info10 else None,
         'Video_URL':'media/media/videos/pitch5.mp4',
         # Add other fields as needed

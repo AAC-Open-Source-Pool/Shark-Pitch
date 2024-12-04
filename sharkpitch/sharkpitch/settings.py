@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cometchat',
 ]
 
 MIDDLEWARE = [
@@ -160,8 +159,3 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-TWILIO_ACCOUNT_SID = 'ACb03490744bd3cc610528cf3aaf7170bb'
-TWILIO_AUTH_TOKEN = '6b60f97ae9c11b88acc6407940cee566'
-TWILIO_CHAT_SERVICE_SID = 'IS6b79cbaf8e9647dcae06d779dc9caf82'  # Leave blank for now

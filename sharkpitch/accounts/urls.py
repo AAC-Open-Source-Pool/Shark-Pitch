@@ -10,6 +10,7 @@ urlpatterns=[
     path('login/',views.login_view,name='login_view'),
     path('Investor_landing/',views.Investor_landing,name='Investor_landing'),
     path('startup/<int:user_id>/', views.startup_home_view, name='startup_home'),
+    path('startup_landing/', views.startup_landing, name='startup_landing'),
     path('verification1/',views.startup_register1_view,name='startup_register1_view'),
     path('verification2/',views.startup_register2_view,name='startup_register2_view'),
     path('verification3/',views.startup_register3_view,name='startup_register3_view'),
