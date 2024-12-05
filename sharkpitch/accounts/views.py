@@ -258,7 +258,7 @@ def startup_register1_view(request):
                 return redirect('accounts:startup_register2_view')  # Redirect to the next registration step
             else:
                 messages.error(request, 'Please fill out all fields.')
-        return render(request, 'startup_verification_page1.html')
+    return render(request, 'startup_verification_page1.html')
 
 # Startup Registration Step 2
 def startup_register2_view(request):
