@@ -8,7 +8,7 @@
 <b>Team Member 3: </b><p>Kothakonda Nagasree</p>
 <b>Team Member 4: </b><p>Amudala Premendar Reddy</p>
 <b>Team Member 5: </b><p>Kurma Shruthika</p>
-@ -0,0 +1,118 @@
+
 # Shark Pitch
 
 ---
