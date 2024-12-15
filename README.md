@@ -102,7 +102,7 @@ Open your browser and navigate to:
 
 <a href = "http://localhost:8000">http://localhost:8000</a>  
 
---
+---
 
 ## Preview
 Screenshot of the project:
@@ -111,7 +111,7 @@ Screenshot of the project:
    <img src = "https://i.imgur.com/5XxOclD_d.webp?maxwidth=1520&fidelity=grand">
 </div>
 
---
+---
 
 ## Contribution
 We welcome contributions to Shark Pitch! To contribute, follow these steps:
